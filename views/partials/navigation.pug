@@ -41,49 +41,19 @@ nav.navigation
               if ( altLang.lang === 'pt-pt' )
                 li.navigation__list__item
                   if (typeof(parent_pt) == 'undefined')
-                    a.navigation__list__link#pt(href=`/${altLang.lang}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇵🇹
+                    a.navigation__list__link#pt(href=`/${altLang.lang}/${altLang.uid === 'home' ?  '' : altLang.uid}/`) 🇵🇹
                   else if (typeof(parent_pt[0]) !== 'undefined')
-                    a.navigation__list__link#pt(href=`/${altLang.lang}/${parent_pt[0].uid}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇵🇹
+                    a.navigation__list__link#pt(href=`/${altLang.lang}/${parent_pt[0].uid}/${altLang.uid === 'home' ?  '' : altLang.uid}/`) 🇵🇹
 
           if ( lang === 'pt-pt' )
             li.navigation__list__item
-              a.navigation__list__link#pt(href="#" data-animation="title") 🇵🇹
+              a.navigation__list__link#pt(href="#") 🇵🇹
             
             each altLang in altLangs
               if ( altLang.lang === 'en-gb' )
                 li.navigation__list__item
                   if (typeof(parent_en) == 'undefined')
-                    a.navigation__list__link#en(href=`/${altLang.lang}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇬🇧
+                    a.navigation__list__link#en(href=`/${altLang.lang}/${altLang.uid === 'home' ?  '' : altLang.uid}/`) 🇬🇧
                   else if (typeof(parent_en[0]) !== 'undefined')
-                    a.navigation__list__link#en(href=`/${altLang.lang}/${parent_en[0].uid}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇬🇧
+                    a.navigation__list__link#en(href=`/${altLang.lang}/${parent_en[0].uid}/${altLang.uid === 'home' ?  '' : altLang.uid}/`) 🇬🇧
     
-    
-    
-      //- .langs
-      //-   .langs__switcher
-        
-      //-     if ( lang === 'en-gb' )
-
-      //-       li.navigation__list__item
-      //-         a.navigation__list__link#en(href="#") 🇬🇧
-
-      //-       each altLang in altLangs
-            
-      //-         if ( altLang.lang === 'pt-pt' )
-      //-           li.navigation__list__item
-      //-             if (typeof(parent_pt) == 'undefined')
-      //-               a.navigation__list__link#pt(href=`/${altLang.lang}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇵🇹
-      //-             else if (typeof(parent_pt[0]) !== 'undefined')
-      //-               a.navigation__list__link#pt(href=`/${altLang.lang}/${parent_pt[0].uid}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇵🇹
-
-      //-     if ( lang === 'pt-pt' )
-      //-       li.navigation__list__item
-      //-         a.navigation__list__link#pt(href="#" data-animation="title") 🇵🇹
-            
-      //-       each altLang in altLangs
-      //-         if ( altLang.lang === 'en-gb' )
-      //-           li.navigation__list__item
-      //-             if (typeof(parent_en) == 'undefined')
-      //-               a.navigation__list__link#en(href=`/${altLang.lang}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇬🇧
-      //-             else if (typeof(parent_en[0]) !== 'undefined')
-      //-               a.navigation__list__link#en(href=`/${altLang.lang}/${parent_en[0].uid}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇬🇧

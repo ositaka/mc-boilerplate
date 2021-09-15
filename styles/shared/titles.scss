@@ -1,6 +1,6 @@
 // titles
 %title-logo {
-  font-family: $font-aristotelica;
+  font-family: $font-quicksand;
   font-size: 3.4rem;
 
   @include media('<phone') {
@@ -9,7 +9,7 @@
 }
 
 %title-20 {
-  font-family: $font-aristotelica;
+  font-family: $font-quicksand;
   font-size: 2rem;
 
   @include media('<phone') {
@@ -66,7 +66,7 @@
 }
 
 %title-44 {
-  font-family: $font-aristotelica;
+  font-family: $font-quicksand;
   font-size: 4.4rem;
   line-height: 1;
 }
@@ -83,8 +83,9 @@
 }
 
 %title-86 {
-  font-family: $font-aristotelica;
+  font-family: $font-quicksand;
   font-size: 8.6rem;
+  font-weight: bold;
   line-height: 1;
 
   @include media('<phone') {
@@ -93,13 +94,13 @@
 }
 
 %title-95 {
-  font-family: $font-aristotelica;
+  font-family: $font-quicksand;
   font-size: 9.5rem;
   line-height: 1.02;
 }
 
 %title-100 {
-  font-family: $font-aristotelica;
+  font-family: $font-quicksand;
   font-size: 10rem;
   line-height: 1.15;
 
@@ -109,24 +110,24 @@
 }
 
 %title-120 {
-  font-family: $font-aristotelica;
+  font-family: $font-quicksand;
   font-size: 12rem;
 }
 
 %title-130 {
-  font-family: $font-aristotelica;
+  font-family: $font-quicksand;
   font-size: 13rem;
   line-height: 1;
 }
 
 %title-180 {
-  font-family: $font-aristotelica;
+  font-family: $font-quicksand;
   font-size: 18rem;
   line-height: 1;
 }
 
 %title-200 {
-  font-family: $font-aristotelica;
+  font-family: $font-quicksand;
   font-size: 20rem;
 
   @include media('<=phone') {
@@ -134,7 +135,7 @@
 }
 
 %title-280 {
-  font-family: $font-aristotelica;
+  font-family: $font-quicksand;
   font-size: 20rem;
 
   @include media('<=phone') {
@@ -142,7 +143,7 @@
 }
 
 %footer-logo {
-  font-family: $font-aristotelica;
+  font-family: $font-quicksand;
   font-size: 3.44rem;
   line-height: 1;
 
@@ -152,7 +153,7 @@
 }
 
 %footer-title {
-  font-family: $font-aristotelica;
+  font-family: $font-quicksand;
   font-size: 2.4rem;
   line-height: 1.1;
 
