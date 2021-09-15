@@ -1,0 +1,25 @@
+$color-primary: #3a3a3a;
+$color-primary-light: #6a6a6a;
+$color-primary-dark: #1a1a1a;
+$color-secondary: #3be9de;
+$color-grey-light: #f7f7f7;
+$color-grey-dark: #1d1d1b;
+
+$font-aristotelica: 'Aristotelica Display Demibold';
+$font-montserrat: 'Montserrat', sans-serif;
+
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-mc: cubic-bezier(0, 0.85, 0.15, 1);
+
+$z-indexes: (
+  'preloader',
+  'mobile-menu-button-toggle',
+  'mobile-menu-button',
+  'mobile-menu',
+  'navigation',
+  'footer',
+  'content',
+  'bubble',
+  'fixed',
+  'canvas'
+);

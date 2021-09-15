@@ -1,0 +1,183 @@
+.the_creators {
+  @extend %page;
+
+  // background: $color-grey-light;
+  // color: $color-grey-dark;
+}
+
+.the_creators__wrapper {
+  padding-top: 2rem;
+}
+
+.the_creators__hero {
+  @extend %full-height;
+}
+
+.the_creators__hero__wrapper {
+  @extend %two-cols;
+
+  align-items: center;
+  width: 146rem;
+
+  @include media('<phone') {
+    display: block;
+    width: 88%;
+  }
+}
+
+.the_creators__left {
+  @extend %two-cols__left;
+
+  text-align: right;
+  width: 56rem;
+
+  @include media('<phone') {
+    width: 100%;
+  }
+}
+
+.the_creators__right {
+  @extend %two-cols__right;
+
+  width: 74rem;
+
+  @include media('<phone') {
+    width: 100%;
+  }
+}
+
+.the_creators__topics {
+  @extend %title-86;
+
+  margin: 2rem 0 4rem;
+}
+
+.typewritter__text {
+  margin-left: 2rem;
+}
+
+.the_creators__words__list {
+  display: none;
+  visibility: hidden;
+}
+
+.the_creators__button {
+  @extend %button-arrow__down;
+
+  display: block;
+  margin-top: 9rem;
+}
+
+.the_creators__media__image {
+  width: 74rem;
+  margin-bottom: 4.5rem;
+
+  @include media('<phone') {
+    width: 100%;
+  }
+}
+
+.the_creators__creators {
+  @extend %full-height;
+
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  width: 126rem;
+
+  @include media('<phone') {
+    display: block;
+    padding-top: 20rem;
+    margin-bottom: 30rem;
+    margin-top: -20rem;
+    width: 88%;
+  }
+}
+
+.the_creators__creators__item {
+  width: 52rem;
+
+  @include media('<phone') {
+    margin-bottom: 18rem;
+    width: 100%;
+  }
+}
+
+.the_creators__creator__name {
+  @extend %title-32;
+
+  @include media('<phone') {
+    font-size: 4.8rem;
+  }
+}
+
+.the_creators__creator__role {
+  @extend %title-20;
+
+  margin-bottom: 3.5rem;
+  margin-top: 0.5rem;
+
+  @include media('<phone') {
+    font-size: 3.8rem;
+    margin-bottom: 6rem;
+    margin-top: 1rem;
+  }
+}
+
+.the_creators__creator__bio {
+  @extend %text-32;
+
+  letter-spacing: 0.05rem;
+
+  & p {
+    margin-bottom: 3.5rem;
+
+    @include media('<phone') {
+      margin-bottom: 6rem;
+    }
+  }
+
+  & a {
+    text-decoration: underline;
+  }
+}
+
+.the_creators__message {
+  @extend %full-height;
+
+  margin: auto;
+  width: 126rem;
+
+  @include media('<phone') {
+    display: block;
+    width: 88%;
+  }
+}
+
+.the_creators__message__title {
+  @extend %title-39;
+
+  margin-bottom: 10.6rem;
+  margin-left: 42rem;
+  width: 80rem;
+
+  @include media('<phone') {
+    font-size: 4.8rem;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.the_creators__message__description {
+  @extend %text-32;
+
+  margin-left: 65rem;
+  width: 52rem;
+
+  @include media('<phone') {
+    margin-left: 0;
+    width: 100%;
+  }
+}

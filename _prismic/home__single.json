@@ -1,0 +1,202 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID"
+      }
+    },
+    "hero": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "topic_text": {
+            "type": "Text",
+            "config": {
+              "label": "Topic Text"
+            }
+          },
+          "topic_link": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["media_page"],
+              "label": "Topic Link"
+            }
+          },
+          "topic_parent_page": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["the_media"],
+              "label": "Topic Parent Page"
+            }
+          }
+        },
+        "label": "Hero"
+      }
+    },
+    "showreel": {
+      "type": "Link",
+      "config": {
+        "label": "Showreel",
+        "select": null,
+        "placeholder": "Select video file"
+      }
+    },
+    "showreel_preview": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Showreel Preview"
+      }
+    },
+    "hero_button": {
+      "type": "Text",
+      "config": {
+        "label": "Hero Button"
+      }
+    },
+    "hero_description": {
+      "type": "StructuredText",
+      "config": {
+        "single": "strong,em",
+        "label": "Hero Description"
+      }
+    },
+    "intro_title": {
+      "type": "Text",
+      "config": {
+        "label": "Intro Title"
+      }
+    },
+    "intro_subtitle": {
+      "type": "Text",
+      "config": {
+        "label": "Intro Subtitle"
+      }
+    },
+    "intro_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,strong,em",
+        "label": "Intro Description"
+      }
+    },
+    "intro_button": {
+      "type": "Text",
+      "config": {
+        "label": "Intro Button"
+      }
+    },
+    "intro_link": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": ["the_creators"],
+        "label": "Intro Link"
+      }
+    },
+    "approach_title": {
+      "type": "Text",
+      "config": {
+        "label": "Approach Title"
+      }
+    },
+    "packs_title": {
+      "type": "Text",
+      "config": {
+        "label": "Packs Title"
+      }
+    },
+    "packs_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "strong,em",
+        "label": "Packs Description"
+      }
+    },
+    "packs_button": {
+      "type": "Text",
+      "config": {
+        "label": "Packs Button"
+      }
+    },
+    "packs_link": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": ["price_packs"],
+        "label": "Packs Link"
+      }
+    },
+    "packs": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "pack": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["pack"],
+              "label": "Pack"
+            }
+          },
+          "order": {
+            "type": "Text",
+            "config": {
+              "label": "Order"
+            }
+          }
+        },
+        "label": "packs"
+      }
+    },
+    "form_title": {
+      "type": "Text",
+      "config": {
+        "label": "Form Title"
+      }
+    },
+    "form_description": {
+      "type": "Text",
+      "config": {
+        "label": "Form Description"
+      }
+    }
+  },
+  "SEO": {
+    "seo": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "seo_title": {
+            "type": "Text",
+            "config": {
+              "label": "SEO Title",
+              "placeholder": "A line of text with less than 60 characters"
+            }
+          },
+          "seo_description": {
+            "type": "Text",
+            "config": {
+              "label": "SEO Description",
+              "placeholder": "Two line of text with less than 155 characters"
+            }
+          },
+          "seo_image": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "SEO Image"
+            }
+          }
+        },
+        "label": "SEO",
+        "repeat": false
+      }
+    }
+  }
+}

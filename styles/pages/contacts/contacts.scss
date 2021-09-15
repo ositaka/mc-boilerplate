@@ -1,0 +1,24 @@
+.contacts {
+  @extend %page;
+
+  // background: $color-grey-light;
+  // color: $color-grey-dark;
+}
+
+.contacts__hero {
+  @extend %full-height;
+  @extend %transition-2s;
+}
+
+.contacts__title {
+  @extend %title-100;
+
+  margin: auto;
+  max-width: 126rem;
+  text-align: center;
+
+  @include media('<phone') {
+    font-size: 10rem;
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,12 @@
+extends ../base.pug
+
+block variables
+  - var template = '404'
+
+block content
+  .404(data-background="#3131f1" data-color="#fff")
+    .404__wrapper
+      h2.404__title(data-animation="title")!=404.data.title.replace(/\n/g, '<br>')
+      p.404__description(data-animation="paragraph")!=404.data.description.replace(/\n/g, '<br>')
+
+      include ../partials/footer

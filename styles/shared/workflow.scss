@@ -1,0 +1,64 @@
+.workflow__item {
+  margin-right: 16rem;
+  width: 60rem;
+
+  &:hover .workflow__item__media__image {
+    margin-bottom: 2rem;
+  }
+  &:hover .workflow__item__title__number {
+    color: white;
+    -webkit-text-stroke: 2px transparent;
+  }
+
+  @include media('<phone') {
+    margin-right: 6rem;
+  }
+}
+
+.workflow__item__media__image {
+  @extend %transition-1s;
+
+  height: 39rem;
+  margin-bottom: -2rem;
+}
+
+.workflow__item__title {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+
+  @include media('<phone') {
+    margin-bottom: 4rem;
+    margin-top: -1rem;
+  }
+}
+
+.workflow__item__title__number {
+  @extend %transition-1s;
+
+  color: transparent;
+  font-size: 8.2rem;
+  font-weight: 700;
+  line-height: 0.9;
+  margin-right: 2.8rem;
+  -webkit-text-stroke: 2px white;
+
+  @include media('<phone') {
+    font-size: 16rem;
+  }
+}
+
+.workflow__item__title__text {
+  font-size: 2.1rem;
+  font-weight: 700;
+
+  @include media('<phone') {
+    font-size: 4rem;
+  }
+}
+
+.workflow__item__description {
+  @extend %text-16;
+
+  letter-spacing: 0.025rem;
+}

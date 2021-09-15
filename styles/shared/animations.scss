@@ -1,0 +1,35 @@
+%animation-arrow-down {
+  animation: scroll-down 2.4s infinite;
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: translate(0, -12px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 8px);
+    opacity: 0;
+  }
+}
+
+%animation-arrow-up {
+  animation: scroll-up 2.4s infinite;
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translate(0, 8px) rotate(180deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, -12px) rotate(180deg);
+    opacity: 0;
+  }
+}

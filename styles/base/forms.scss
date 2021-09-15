@@ -1,0 +1,52 @@
+input,
+select,
+textarea {
+  @extend %text-16;
+
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  display: block;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  line-height: 1.6;
+  padding: 3.1rem;
+  transition: background 300ms ease;
+  width: 100%;
+
+  &:focus {
+    background-color: $color-primary-dark;
+  }
+
+  &[type='submit'] {
+    @extend %button-primary;
+
+    background-color: $color-primary-light;
+    border: none;
+    width: auto;
+  }
+}
+
+.select {
+  display: block;
+  position: relative;
+
+  &:after {
+    background: transparent
+      url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAxNiAxMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMS44NDE3MSAxTDcuNTUyNDYgOC44ODIyN0M3Ljk1MTcxIDkuNDMzMzMgOC43NzI4MSA5LjQzMzMzIDkuMTcyMDYgOC44ODIyN0wxNC44ODI4IDEiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+)
+      center no-repeat;
+    background-size: 100%;
+    content: '';
+    height: 1.8rem;
+    pointer-events: none;
+    position: absolute;
+    right: 3rem;
+    top: calc(50% - 1rem);
+    width: 1.8rem;
+    z-index: 1;
+  }
+
+  & select {
+    appearance: none;
+  }
+}

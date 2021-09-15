@@ -1,0 +1,295 @@
+.work_page {
+  @extend %page;
+
+  // background: $color-grey-light;
+  // color: $color-grey-dark;
+
+  & .footer {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.work_page__wrapper {
+}
+
+.work_page__header {
+  margin: auto;
+  padding-top: 32rem;
+  padding-bottom: 24rem;
+  width: 134rem;
+
+  @include media('<phone') {
+    width: 88%;
+  }
+}
+
+.work_page__project {
+  @extend %text-32;
+
+  margin-bottom: 2rem;
+}
+
+.work_page__title {
+  @extend %title-100;
+
+  margin-right: 40rem;
+
+  @include media('<phone') {
+    margin-right: 0;
+  }
+}
+
+.work_page__body {
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Parallax.
+.work_page__parallax {
+  margin-bottom: 34rem;
+}
+
+.work_page__parallax__media {
+  overflow: hidden;
+
+  & * {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 100vh;
+  }
+}
+
+// Video.
+.work_page__video {
+  height: 82rem;
+  margin: auto;
+  margin-bottom: 34rem;
+  width: 164rem;
+
+  & video {
+    background-color: red;
+    width: 100%;
+  }
+
+  @include media('<phone') {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.work_page__gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  margin-bottom: 34rem;
+  width: 134rem;
+
+  @include media('<phone') {
+    width: 100%;
+  }
+
+  &.flipped {
+    .work_page__gallery__col:nth-child(1) {
+      margin-top: 24rem;
+    }
+
+    .work_page__gallery__col:nth-child(2) {
+      margin-top: 0;
+    }
+  }
+}
+
+.work_page__gallery__col {
+  width: 65rem;
+
+  &:nth-child(2) {
+    margin-top: 24rem;
+  }
+
+  @include media('<phone') {
+    width: 100%;
+
+    &:nth-child(2) {
+      margin-top: 0;
+    }
+  }
+}
+
+// Gallery.
+.work_page__gallery__media {
+  margin-bottom: 5rem;
+  overflow: hidden;
+  width: 65rem;
+
+  & video,
+  & img {
+    height: 100%;
+    margin: -8rem 0;
+    width: 100%;
+  }
+
+  @include media('<phone') {
+    margin-bottom: 3rem;
+    width: 100%;
+  }
+}
+
+.work_page__gallery__media__image {
+  height: auto;
+  width: 65rem;
+
+  @include media('<phone') {
+    width: 100%;
+  }
+}
+
+.work_page__gallery__media__caption {
+  @extend %text-40;
+
+  margin: 4.8rem auto 10rem;
+  max-width: 42rem;
+  text-align: center;
+
+  @include media('<phone') {
+    max-width: 80%;
+  }
+}
+
+// Info.
+.work_page__info {
+  margin: auto;
+  margin-top: -12rem;
+  margin-bottom: 34rem;
+  width: 134rem;
+
+  @include media('<phone') {
+    width: 88%;
+    margin: 0 auto 24rem;
+  }
+}
+
+.work_page__info__small {
+  display: flex;
+  font-size: 2.3rem;
+  line-height: 4.6rem;
+
+  & .work_page__info__title {
+    width: 60rem;
+    margin-right: 12rem;
+    font-size: 3.4rem;
+    font-weight: 600;
+
+    @include media('<phone') {
+      width: 88%;
+    }
+  }
+
+  & .work_page__info__description {
+    @extend %text-32;
+
+    width: 130rem;
+
+    & p {
+      margin-bottom: 3rem;
+
+      &:last-child {
+        margin-bottom: 0rem;
+      }
+    }
+
+    @include media('<phone') {
+      width: 88%;
+    }
+  }
+
+  @include media('<phone') {
+    display: block;
+
+    & .work_page__info__title {
+      width: 100%;
+      margin-bottom: 6rem;
+    }
+
+    & .work_page__info__description {
+      width: 100%;
+
+      & p {
+        margin-bottom: 6rem;
+      }
+    }
+  }
+}
+
+.work_page__info__big {
+  .work_page__info__title {
+    font-size: 6rem;
+    font-weight: 600;
+  }
+}
+
+.work_page__next {
+  padding: 36rem 0 36rem;
+  text-align: center;
+}
+
+.work_page__next__link {
+  @extend %title-200;
+
+  color: transparent;
+  line-height: 1;
+  -webkit-text-stroke: 2px black;
+
+  &:nth-child(3),
+  &:nth-child(7) {
+    color: black;
+    -webkit-text-stroke: 2px transparent;
+  }
+}
+
+.work_page__next__marquee__list {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100vw;
+
+  &:nth-child(1) {
+    margin-bottom: -4rem;
+  }
+
+  & a {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.work_page__next__marquee__list__content {
+  animation: marquee 32s linear infinite;
+  animation-delay: -16s; // half-time
+  display: inline-block;
+  will-change: transform;
+}
+
+.work_page__next__marquee__list__content__copy {
+  animation: marquee__copy 32s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes marquee__copy {
+  from {
+    transform: translate3d(0%, 0, 0);
+  }
+  to {
+    transform: translate3d(-200%, 0, 0);
+  }
+}

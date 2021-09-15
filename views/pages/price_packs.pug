@@ -1,0 +1,33 @@
+extends ../base.pug
+
+block variables
+  - var template = 'price_packs'
+
+block content
+  .price_packs(data-background="#2020ac" data-color="#fff")
+    .price_packs__wrapper
+      
+      .price_packs__header
+        h2.price_packs__title(data-animation="title")!=price_packs.data.title.replace(/\n/g, '<br>')
+        .price_packs__text
+          p.price_packs__description(data-animation="title")!=price_packs.data.description
+            br
+            a.price_packs__button(href="#packs")=price_packs.data.button
+          //- div(data-animation="title")
+
+      .price_packs__packs#packs
+        each pack in packs
+          a.packs__pack(href=`/${lang}/${pack.data.parent_page.uid}/${pack.uid}/`)
+            h3.packs__pack__title(data-animation="title")!=pack.data.title.replace(/\n/g, '<br>')
+            .packs__pack__price(data-animation="title")=`€${pack.data.price}`
+
+            each feature in pack.data.features
+              .packs__pack__feature(data-animation="title")=feature.feature_title
+
+        a.packs__pack.packs__pack__info(href=`/${lang}/${price_packs.data.info_link.uid}/`)
+          h3.packs__pack__info__title(data-animation="title")!=price_packs.data.info_title.replace(/\n/g, '<br>')
+          .packs__pack__info__message(data-animation="title")=price_packs.data.info_message
+          .packs__pack__info__button(data-animation="title")=price_packs.data.info_button
+
+
+      include ../partials/footer

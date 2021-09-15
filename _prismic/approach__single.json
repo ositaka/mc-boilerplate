@@ -1,0 +1,108 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID"
+      }
+    },
+    "title": {
+      "type": "Text",
+      "config": {
+        "label": "Title"
+      }
+    },
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,strong,em",
+        "label": "Description"
+      }
+    },
+    "button": {
+      "type": "Text",
+      "config": {
+        "label": "Button"
+      }
+    },
+    "workflow": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "image": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [
+                {
+                  "name": "phone",
+                  "width": 480,
+                  "height": null
+                }
+              ],
+              "label": "Image"
+            }
+          },
+          "item_title": {
+            "type": "Text",
+            "config": {
+              "label": "Item Title"
+            }
+          },
+          "item_description": {
+            "type": "Text",
+            "config": {
+              "label": "Item Description"
+            }
+          },
+          "item_number": {
+            "type": "Number",
+            "config": {
+              "label": "Item Number"
+            }
+          }
+        },
+        "label": "Workflow"
+      }
+    },
+    "workflow_title": {
+      "type": "Text",
+      "config": {
+        "label": "Workflow Title"
+      }
+    }
+  },
+  "SEO": {
+    "seo": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "seo_title": {
+            "type": "Text",
+            "config": {
+              "label": "SEO Title",
+              "placeholder": "A line of text with less than 60 characters"
+            }
+          },
+          "seo_description": {
+            "type": "Text",
+            "config": {
+              "label": "SEO Description",
+              "placeholder": "Two line of text with less than 155 characters"
+            }
+          },
+          "seo_image": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "SEO Image"
+            }
+          }
+        },
+        "label": "SEO",
+        "repeat": false
+      }
+    }
+  }
+}

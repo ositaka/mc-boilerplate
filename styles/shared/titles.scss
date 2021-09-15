@@ -1,0 +1,203 @@
+// titles
+%title-logo {
+  font-family: $font-aristotelica;
+  font-size: 3.4rem;
+
+  @include media('<phone') {
+    font-size: 5rem;
+  }
+}
+
+%title-20 {
+  font-family: $font-aristotelica;
+  font-size: 2rem;
+
+  @include media('<phone') {
+    font-size: 3.2rem;
+    line-height: 6rem;
+    letter-spacing: -0.02rem;
+    font-weight: 400;
+  }
+}
+
+%title-24 {
+  font-family: $font-montserrat;
+  font-size: 2.35rem;
+  font-weight: 600;
+
+  @include media('<phone') {
+    font-size: 4rem;
+  }
+}
+
+%title-25 {
+  font-family: $font-montserrat;
+  font-size: 2.48rem;
+  font-weight: 600;
+
+  @include media('<phone') {
+    font-size: 4.4rem;
+    line-height: 6.4rem;
+  }
+}
+
+%title-32 {
+  font-family: $font-montserrat;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 5.2rem;
+
+  @include media('<phone') {
+    font-size: 5.4rem;
+    line-height: 7.2rem;
+  }
+}
+
+%title-39 {
+  font-family: $font-montserrat;
+  font-size: 3.87rem;
+  font-weight: 700;
+  line-height: 5.2rem;
+
+  @include media('<phone') {
+    font-size: 5.4rem;
+    line-height: 7.2rem;
+  }
+}
+
+%title-44 {
+  font-family: $font-aristotelica;
+  font-size: 4.4rem;
+  line-height: 1;
+}
+
+%title-54 {
+  font-family: $font-montserrat;
+  font-size: 5.4rem;
+  font-weight: 600;
+  line-height: 1;
+
+  @include media('<phone') {
+    font-size: 7.4rem;
+  }
+}
+
+%title-86 {
+  font-family: $font-aristotelica;
+  font-size: 8.6rem;
+  line-height: 1;
+
+  @include media('<phone') {
+    font-size: 10.8rem;
+  }
+}
+
+%title-95 {
+  font-family: $font-aristotelica;
+  font-size: 9.5rem;
+  line-height: 1.02;
+}
+
+%title-100 {
+  font-family: $font-aristotelica;
+  font-size: 10rem;
+  line-height: 1.15;
+
+  @include media('<phone') {
+    font-size: 12rem;
+  }
+}
+
+%title-120 {
+  font-family: $font-aristotelica;
+  font-size: 12rem;
+}
+
+%title-130 {
+  font-family: $font-aristotelica;
+  font-size: 13rem;
+  line-height: 1;
+}
+
+%title-180 {
+  font-family: $font-aristotelica;
+  font-size: 18rem;
+  line-height: 1;
+}
+
+%title-200 {
+  font-family: $font-aristotelica;
+  font-size: 20rem;
+
+  @include media('<=phone') {
+  }
+}
+
+%title-280 {
+  font-family: $font-aristotelica;
+  font-size: 20rem;
+
+  @include media('<=phone') {
+  }
+}
+
+%footer-logo {
+  font-family: $font-aristotelica;
+  font-size: 3.44rem;
+  line-height: 1;
+
+  @include media('<phone') {
+    font-size: 4.8rem;
+  }
+}
+
+%footer-title {
+  font-family: $font-aristotelica;
+  font-size: 2.4rem;
+  line-height: 1.1;
+
+  @include media('<phone') {
+    font-size: 4.8rem;
+  }
+}
+
+// body texts
+%text-16 {
+  font-family: $font-montserrat;
+  font-size: 1.65rem;
+  letter-spacing: 0.02rem;
+  line-height: 3rem;
+  margin-bottom: 3.4rem;
+
+  @include media('<phone') {
+    font-size: 3.1rem;
+    line-height: 5.2rem;
+  }
+}
+
+%text-32 {
+  font-family: $font-montserrat;
+  font-size: 1.65rem;
+  padding-right: 4rem;
+  line-height: 3.2rem;
+
+  @include media('<phone') {
+    font-size: 3.2rem;
+    line-height: 6rem;
+    letter-spacing: -0.02rem;
+    font-weight: 400;
+    padding-right: 0;
+  }
+}
+
+%text-40 {
+  font-family: $font-montserrat;
+  font-size: 2.1rem;
+  line-height: 3.7rem;
+
+  @include media('<phone') {
+    font-size: 4rem;
+    line-height: 8rem;
+    letter-spacing: -0.02rem;
+  }
+}

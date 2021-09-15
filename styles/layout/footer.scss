@@ -1,0 +1,171 @@
+.footer {
+  background: white;
+  color: $color-primary;
+  min-height: 60rem;
+  padding-top: 21rem;
+  position: relative;
+  width: 100%;
+  z-index: z('footer');
+
+  @include media('<phone') {
+    padding-top: 18rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.footer__wrapper,
+.footer__right {
+  display: flex;
+  justify-content: space-evenly;
+
+  @include media('<phone') {
+    display: block;
+  }
+}
+
+.footer__wrapper {
+  margin: auto;
+  width: 122rem;
+
+  @include media('<phone') {
+    margin: auto;
+    position: relative;
+    width: 88%;
+
+    & .footer__left,
+    & .footer__right,
+    & .footer__address,
+    & .footer__social {
+      width: 100%;
+    }
+
+    & .footer__mobile {
+      position: absolute;
+      top: -28rem;
+    }
+
+    & .footer__navigation {
+      display: none;
+    }
+  }
+}
+
+.footer__left {
+  width: 54rem;
+}
+
+.footer__right {
+  width: 83rem;
+}
+
+.footer__right,
+.footer__social {
+  font-size: 1.8rem;
+  line-height: 3.1rem;
+}
+
+.footer__logo {
+  @extend %footer-logo;
+
+  margin-top: 1rem;
+  margin-bottom: 5.3rem;
+  width: min-content;
+
+  @include media('<phone') {
+    margin-top: 28rem;
+    margin-bottom: 0;
+  }
+}
+
+.footer__title {
+  @extend %footer-title;
+}
+
+.footer__button {
+  @extend %footer-title;
+
+  border-bottom: 0.62rem solid $color-secondary;
+  padding-bottom: 0.1rem;
+
+  @include media('<phone') {
+    border-bottom: 1rem solid $color-secondary;
+  }
+}
+
+.footer__navigation {
+  width: 18rem;
+}
+
+.footer__navigation__link {
+  display: block;
+}
+
+.footer__address {
+  width: 25rem;
+
+  @include media('<phone') {
+    & p:first-child {
+      display: none;
+    }
+  }
+}
+
+.footer__email {
+  width: 15.5rem;
+
+  @include media('<phone') {
+    & p:first-child {
+      font-weight: bold;
+      margin-top: 12rem;
+    }
+  }
+}
+
+.footer__social {
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
+  text-align: right;
+  width: 131rem;
+
+  @include media('<phone') {
+    display: block;
+    width: 100%;
+  }
+}
+
+.footer__social__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4.5rem;
+  width: 35rem;
+
+  @include media('<phone') {
+    margin: 15rem auto 3rem;
+    justify-content: space-between;
+    width: 88%;
+  }
+}
+
+.footer__social__link {
+  margin-right: 5.4rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include media('<phone') {
+    margin-right: 0;
+  }
+}
+
+@include media('<phone') {
+  .footer__address,
+  .footer__email,
+  .footer__social__link {
+    font-size: 3.4rem;
+    line-height: 6.6rem;
+    letter-spacing: 0.02rem;
+    font-weight: 400;
+  }
+}

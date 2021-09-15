@@ -1,0 +1,25 @@
+{
+  "Main": {
+    "list": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "link": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "label": "Link"
+            }
+          },
+          "text": {
+            "type": "Text",
+            "config": {
+              "label": "Text"
+            }
+          }
+        },
+        "label": "List"
+      }
+    }
+  }
+}

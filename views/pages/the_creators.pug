@@ -1,0 +1,45 @@
+extends ../base.pug
+
+block variables
+  - var template = 'the_creators'
+
+block content
+  .the_creators(data-background="#3131f1" data-color="#fff")
+    .the_creators__wrapper
+
+      section.the_creators__hero
+        .the_creators__hero__wrapper
+          .the_creators__left
+            .the_creators__topics
+              h2.the_creators__title!=the_creators.data.title.replace('.', '<br>')
+                span.typewritter__text
+              .the_creators__words__list
+                each word, index in the_creators.data.words
+                  if ( index < the_creators.data.words.length -1)
+                    =`${word.word},`
+                  else
+                    =`${word.word}`
+              .the_creators__button(data-animation="title")
+                a(href="#team")=the_creators.data.button
+
+          .the_creators__right
+            figure.the_creators__media
+              img.the_creators__media__image(alt=the_creators.data.image.alt data-src=the_creators.data.image.url)
+
+
+      section.the_creators__creators#team
+        each creator in the_creators.data.creators 
+          .the_creators__creators__item
+            h3.the_creators__creator__name(data-animation="title")!=creator.name
+            h4.the_creators__creator__role(data-animation="title")!=creator.role
+
+            .the_creators__creator__bio!=PrismicDOM.RichText.asHtml(creator.bio).replace(/<p>/g, '<p data-animation="paragraph">')
+
+      section.the_creators__message
+        include ../bubbles/the-creators
+        
+        h3.the_creators__message__title(data-animation="title")=the_creators.data.message_title
+        .the_creators__message__description!=PrismicDOM.RichText.asHtml(the_creators.data.message_description).replace(/<p>/g, '<p data-animation="paragraph">')
+
+
+      include ../partials/footer

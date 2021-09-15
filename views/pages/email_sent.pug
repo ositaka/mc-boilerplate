@@ -1,0 +1,13 @@
+//- extends ../base.pug
+
+block variables
+  - var template = 'email_sent'
+
+block content
+  .email_sent(data-background="#3131f1" data-color="#fff")
+    .email_sent__wrapper
+
+      h1=msg
+      div!=output
+
+      //- include ../partials/footer

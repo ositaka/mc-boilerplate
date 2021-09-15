@@ -1,0 +1,89 @@
+block variables
+  - var altLangs = altLangs
+  - var lang = lang
+  - var parent_en = parent_en
+  - var parent_pt = parent_pt
+
+nav.navigation
+  a.navigation__link(href=`/${lang}/`) Project Name
+
+  #menu-toggle
+    input#menu-toggle-button(type='checkbox')
+    span
+    span
+    span
+    
+    .menu
+      ul.navigation__list
+        each item in navigation.data.nav
+          li.navigation__list__item
+            a.navigation__list__link(href=Link(item.primary.link))=item.primary.label[0].text
+
+            - var parent = item.primary.link.uid
+
+            if (item.items)
+              ul.navigation__list__subnav
+
+                each sub in item.items
+                  li.navigation__list__item
+                    a.navigation__list__link(href=`${lang}/${parent}/${sub.sub_nav_link.uid}`)=sub.sub_nav_link_label[0].text
+
+      .langs
+        .langs__switcher
+        
+          if ( lang === 'en-gb' )
+
+            li.navigation__list__item
+              a.navigation__list__link#en(href="#") 🇬🇧
+
+            each altLang in altLangs
+            
+              if ( altLang.lang === 'pt-pt' )
+                li.navigation__list__item
+                  if (typeof(parent_pt) == 'undefined')
+                    a.navigation__list__link#pt(href=`/${altLang.lang}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇵🇹
+                  else if (typeof(parent_pt[0]) !== 'undefined')
+                    a.navigation__list__link#pt(href=`/${altLang.lang}/${parent_pt[0].uid}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇵🇹
+
+          if ( lang === 'pt-pt' )
+            li.navigation__list__item
+              a.navigation__list__link#pt(href="#" data-animation="title") 🇵🇹
+            
+            each altLang in altLangs
+              if ( altLang.lang === 'en-gb' )
+                li.navigation__list__item
+                  if (typeof(parent_en) == 'undefined')
+                    a.navigation__list__link#en(href=`/${altLang.lang}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇬🇧
+                  else if (typeof(parent_en[0]) !== 'undefined')
+                    a.navigation__list__link#en(href=`/${altLang.lang}/${parent_en[0].uid}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇬🇧
+    
+    
+    
+      //- .langs
+      //-   .langs__switcher
+        
+      //-     if ( lang === 'en-gb' )
+
+      //-       li.navigation__list__item
+      //-         a.navigation__list__link#en(href="#") 🇬🇧
+
+      //-       each altLang in altLangs
+            
+      //-         if ( altLang.lang === 'pt-pt' )
+      //-           li.navigation__list__item
+      //-             if (typeof(parent_pt) == 'undefined')
+      //-               a.navigation__list__link#pt(href=`/${altLang.lang}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇵🇹
+      //-             else if (typeof(parent_pt[0]) !== 'undefined')
+      //-               a.navigation__list__link#pt(href=`/${altLang.lang}/${parent_pt[0].uid}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇵🇹
+
+      //-     if ( lang === 'pt-pt' )
+      //-       li.navigation__list__item
+      //-         a.navigation__list__link#pt(href="#" data-animation="title") 🇵🇹
+            
+      //-       each altLang in altLangs
+      //-         if ( altLang.lang === 'en-gb' )
+      //-           li.navigation__list__item
+      //-             if (typeof(parent_en) == 'undefined')
+      //-               a.navigation__list__link#en(href=`/${altLang.lang}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇬🇧
+      //-             else if (typeof(parent_en[0]) !== 'undefined')
+      //-               a.navigation__list__link#en(href=`/${altLang.lang}/${parent_en[0].uid}/${altLang.uid === 'home' ?  '' : altLang.uid}/` data-animation="title") 🇬🇧

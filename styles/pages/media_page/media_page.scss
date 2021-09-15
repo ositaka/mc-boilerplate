@@ -1,0 +1,537 @@
+.media_page {
+  @extend %page;
+
+  // background: $color-grey-light;
+  // color: $color-grey-dark;
+}
+
+.media__page__hero {
+  @extend %full-height;
+  @extend %transition-2s;
+
+  z-index: -1;
+}
+
+.media__page__hero__wrapper {
+  display: flex;
+  margin: 12rem auto;
+  position: relative;
+
+  #web & {
+    left: 8.5rem;
+  }
+
+  @include media('<phone') {
+    display: block;
+    width: 88%;
+  }
+}
+
+.media_page__hero__title,
+.media_page__hero__link {
+  @extend %title-95;
+}
+
+.media_page__hero__title {
+  margin-right: 11rem;
+  text-align: right;
+  width: min-content;
+
+  @include media('<phone') {
+    text-align: left;
+  }
+}
+
+.media_page__hero__link {
+  @extend %transition-1s;
+
+  color: transparent;
+  display: block;
+  margin-bottom: -0.72rem;
+  -webkit-text-stroke: 2px white;
+
+  &:hover {
+    color: white;
+    -webkit-text-stroke: 2px transparent;
+  }
+}
+
+.media_page__hero__button {
+  @extend %button-secondary;
+
+  margin-top: 4.2rem;
+}
+
+.media__page__hero__description {
+  font-size: 2.16rem;
+  margin: 2rem auto;
+  text-align: center;
+  width: 65rem;
+
+  @include media('<phone') {
+    font-size: 3.2rem;
+    font-weight: 400;
+    letter-spacing: -0.02rem;
+    line-height: 6rem;
+    text-align: left;
+  }
+}
+
+.media__page__hero {
+  padding-left: 20rem;
+  padding-right: 20rem;
+
+  @include media('<phone') {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.media_page__section {
+  @extend %full-height;
+
+  & > * {
+    margin-left: 20rem;
+    margin-right: 20rem;
+
+    @include media('<phone') {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+// Slices.
+// Slide Info.
+.media__page__slice-image,
+.media__page__slice-icons,
+.media__page__slice-info,
+.media__page__slice-transparent-info {
+  padding: 14rem;
+
+  @include media('<phone') {
+    margin-bottom: 0;
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+
+.media__page__slice-image,
+.media__page__slice-info,
+.media__page__packs {
+  background-color: $color-grey-light;
+  color: $color-primary;
+}
+
+.media__page__slice-icons {
+  background-color: $color-primary;
+  color: white;
+}
+
+.media__page__slice-info {
+  display: flex;
+
+  @include media('<phone') {
+    display: block;
+    position: relative;
+    padding-bottom: 30rem;
+  }
+}
+
+.media__page__slice-info__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 10rem;
+  width: 50%;
+
+  @include media('<phone') {
+    display: block;
+    padding-right: 0;
+    width: 100%;
+
+    & [data-animation='title']:last-child {
+      bottom: 20rem;
+      position: absolute;
+    }
+  }
+}
+
+.media__page__slice-info__right {
+  padding-left: 2.2rem;
+  width: 50%;
+
+  @include media('<phone') {
+    padding-left: 0;
+    width: 100%;
+  }
+}
+
+.media__page__slice-info__button {
+  @extend %button-primary;
+}
+
+.media__page__slice-info__title {
+  @extend %title-39;
+
+  @include media('<phone') {
+    margin-bottom: 9rem;
+  }
+}
+
+.media__page__slice-info__subtitle {
+  @extend %title-25;
+
+  margin-bottom: 3rem;
+}
+
+.media__page__slice-info__description {
+  @extend %text-32;
+
+  & p {
+    margin-bottom: 3.1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media('<phone') {
+      margin-bottom: 6rem;
+
+      &:last-child {
+        margin-bottom: 6rem;
+      }
+    }
+  }
+}
+
+// Slide Image.
+.media__page__slice-image {
+  display: flex;
+
+  &.media__page__slice-image--left {
+    flex-direction: row-reverse;
+  }
+
+  @include media('<phone') {
+    display: block;
+    margin-bottom: -0.2rem;
+  }
+}
+
+.media__page__slice-image__media {
+  height: 30rem;
+  width: 64rem;
+
+  & > * {
+    position: relative;
+    width: 85rem;
+
+    .media__page__slice-image--left & {
+      left: -34rem;
+    }
+
+    .media__page__slice-image--right & {
+      right: -4rem;
+      width: 110rem;
+    }
+  }
+
+  @include media('<phone') {
+    height: max-content;
+    width: 100%;
+
+    & > * {
+      width: 114%;
+
+      .media__page__slice-image--left & {
+        left: -7%;
+      }
+
+      .media__page__slice-image--right & {
+        right: 7%;
+        width: 114%;
+      }
+    }
+  }
+}
+
+.media__page__slice-image__text {
+  padding-right: 4rem;
+}
+
+.media__page__slice-image__title,
+.media__page__slice-image__description p {
+  margin-bottom: 3.2rem;
+
+  @include media('<phone') {
+    margin-bottom: 6rem;
+  }
+}
+
+.media__page__slice-image__description {
+  line-height: 3rem;
+
+  @include media('<phone') {
+    font-size: 3.2rem;
+    line-height: 6rem;
+    letter-spacing: -0.02rem;
+    font-weight: 400;
+  }
+}
+
+.media__page__slice-image__title {
+  @extend %title-39;
+}
+
+.media__page__slice-image__button {
+  @extend %button-primary;
+
+  @include media('<phone') {
+    margin-bottom: 6rem;
+  }
+}
+
+// Slide Icons.
+.media__page__slice-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include media('<phone') {
+    display: block;
+  }
+}
+
+.media__page__slice-icons__item {
+  display: flex;
+  margin-bottom: 6.6rem;
+  width: 58rem;
+
+  &:nth-child(3),
+  &:nth-child(4) {
+    margin-bottom: 0;
+  }
+
+  @include media('<phone') {
+    display: block;
+    margin-bottom: 12rem;
+    width: 100%;
+
+    &:nth-child(3) {
+      margin-bottom: 12rem;
+    }
+
+    &:nth-child(4) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.media__page__slice-icons__item__icon {
+  margin-right: 4.5rem;
+  min-height: 8rem;
+  min-width: 8rem;
+
+  @include media('<phone') {
+    width: 30%;
+    margin: auto;
+  }
+}
+
+.media__page__slice-icons__item__icon svg .path {
+  @extend %icon;
+}
+
+.media__page__slice-icons__item__text {
+  padding-right: 3rem;
+
+  @include media('<phone') {
+    padding-right: 0;
+    margin: auto;
+    max-width: 88%;
+    text-align: center;
+  }
+}
+
+.media__page__slice-icons__title {
+  @extend %title-24;
+
+  margin-bottom: 1.5rem;
+
+  @include media('<phone') {
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
+}
+
+.media__page__slice-icons__description {
+  @extend %text-32;
+}
+
+// Slide Transparent Info.
+.media__page__slice-transparent-info {
+  @extend %full-height;
+
+  @include media('<phone') {
+    background-color: $color-primary;
+  }
+}
+
+.media__page__slice-transparent-info__wrapper {
+  display: flex;
+
+  @include media('<phone') {
+    display: block;
+  }
+}
+
+.media__page__slice-transparent-info__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 10rem;
+  width: 50%;
+
+  @include media('<phone') {
+    display: block;
+    width: 100%;
+  }
+}
+
+.media__page__slice-transparent-info__right {
+  width: 50%;
+  padding-left: 2.2rem;
+
+  @include media('<phone') {
+    padding-left: 0;
+    width: 100%;
+  }
+}
+
+.media__page__slice-transparent-info__button {
+  @extend %button-secondary;
+}
+
+.media__page__slice-transparent-info__title {
+  @extend %title-39;
+
+  @include media('<phone') {
+    margin-bottom: 6rem;
+  }
+}
+
+.media__page__slice-transparent-info__description {
+  @extend %text-32;
+
+  & p {
+    margin-bottom: 3.1rem;
+
+    @include media('<phone') {
+      margin-bottom: 6rem;
+    }
+  }
+}
+
+// Packs.
+.media__page__packs {
+  margin-bottom: -0.4rem;
+  margin-top: 12rem;
+
+  @include media('<phone') {
+    margin-top: 0;
+  }
+}
+
+.media__page__packs__wrapper {
+  display: flex;
+  margin: auto;
+  left: 13.5rem;
+  padding-top: 6rem;
+  padding-bottom: 12rem;
+  position: relative;
+  width: 164.5rem;
+
+  @include media('<phone') {
+    display: block;
+    position: unset;
+    width: 100%;
+  }
+}
+
+.media__page__packs__text {
+  margin-right: 8rem;
+  width: 42rem;
+
+  @include media('<phone') {
+    margin: auto;
+    width: 88%;
+  }
+}
+
+.media__page__packs__title {
+  @extend %title-39;
+
+  margin-top: 10rem;
+  margin-bottom: 6rem;
+}
+
+.media__page__packs__description p {
+  line-height: 3rem;
+  margin-bottom: 3.8rem;
+
+  @include media('<phone') {
+    font-size: 3.2rem;
+    line-height: 6rem;
+    letter-spacing: -0.02rem;
+    font-weight: 400;
+  }
+}
+
+.media__page__packs__slider {
+  margin-top: -4rem;
+  overflow: hidden;
+  position: relative;
+  width: 110rem;
+
+  &::before {
+    background: linear-gradient(
+      to right,
+      $color-grey-light 10%,
+      rgba(247, 247, 247, 0.8) 40%,
+      rgba(247, 247, 247, 0.1) 80%,
+      transparent 100%
+    );
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 10rem;
+    z-index: 10;
+  }
+
+  @include media('<phone') {
+    width: 100%;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  & .swiper-wrapper {
+    padding-top: 14rem;
+    padding-bottom: 14rem;
+  }
+
+  & .swiper-slide {
+    margin-left: 12rem;
+    margin-right: -4rem;
+
+    @include media('<phone') {
+      margin-left: 4rem;
+      margin-right: 4rem;
+    }
+  }
+}

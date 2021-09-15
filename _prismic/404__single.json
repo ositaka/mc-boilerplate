@@ -1,0 +1,22 @@
+{
+  "Main": {
+    "title": {
+      "type": "Text",
+      "config": {
+        "label": "Title"
+      }
+    },
+    "description": {
+      "type": "Text",
+      "config": {
+        "label": "Description"
+      }
+    },
+    "button": {
+      "type": "Text",
+      "config": {
+        "label": "Button"
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+%full-height {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  min-height: 110rem;
+
+  @include media('<phone') {
+    height: unset;
+    min-height: 100vh;
+  }
+}
+
+%two-cols {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 126rem;
+
+  @include media('<phone') {
+    display: block;
+    width: 88%;
+  }
+}
+
+%two-cols__left {
+  margin-right: 13rem;
+  width: 46rem;
+
+  @include media('<phone') {
+    width: 100%;
+  }
+}
+
+%two-cols__right {
+  width: 64rem;
+
+  @include media('<phone') {
+    width: 100%;
+  }
+}
+
+%two-cols-large {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 138rem;
+
+  @include media('<phone') {
+    display: block;
+    width: 88%;
+  }
+}
+
+%two-cols-large__left {
+  margin-right: 22rem;
+  width: 42rem;
+
+  @include media('<phone') {
+    width: 100%;
+  }
+}
+
+%two-cols-large__right {
+  width: 74rem;
+
+  @include media('<phone') {
+    width: 100%;
+  }
+}

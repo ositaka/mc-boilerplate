@@ -1,0 +1,100 @@
+block variables
+  - var lang = lang
+  - var meta = meta
+
+//                                                               
+//                                      @@@@@@@@@                
+//                                 @@@@@@@@@@@@@@@@@@@           
+//     %@@@@@                   @@@@@@@@@@@@@@@@@@@@@@@@         
+//      @@@@@@@%              @@@@@@@@            @@@@@@@@       
+//        @@@@@@@@          @@@@@@@@                @@@@@@@      
+//          @@@@@@@@      @@@@@@@@                    @@@@@@     
+//            @@@@@@@@  @@@@@@@@                      @@@@@@     
+//              @@@@@@@@@@@@@@                        @@@@@@     
+//                @@@@@@@@@#                        (@@@@@@      
+//                  @@@@@       @@@@@@            @@@@@@@@       
+//                              @@@@@@@@@@@@@@@@@@@@@@@@         
+//                                 @@@@@@@@@@@@@@@@@@@           
+//                                      @@@@@@@@@                
+//                                                               
+//     developed by                                              
+//     Nuno Marques @ mediacreators.studio                       
+//                                                               
+
+doctype html
+html(class=isDesktop ? "desktop" : isTablet ? "tablet" : isPhone ? "phone" : "" lang=lang)
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="robots" content="index, follow")
+
+    base(href="/")
+
+    title=meta.seo_title
+    meta(name="description" content=meta.seo_description)
+    meta(name="author" content="Media Creators Studio (Nuno Marques & Birgit Verbeke)")
+
+    link(href="main.css" rel="stylesheet")
+
+    link(rel="manifest" href="/site.webmanifest")
+    link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png")
+    link(rel="mask-icon" href="/safari-pinned-tab.svg" color="#3131f1")
+    meta(name="apple-mobile-web-app-title" content="Media Creators")
+    meta(name="application-name" content="Media Creators")
+    meta(name="msapplication-TileColor" content="#3131f1")
+    meta(name="msapplication-TileImage" content="/mstile-144x144.png")
+
+    meta(property="og:type" content="website")
+    meta(property="og:title" content=meta.seo_title)
+    meta(property="og:description" content=meta.seo_description)
+    meta(property="og:image" content=meta.seo_image ? meta.seo_image.url : '')
+    meta(property="og:url" content="https://mediacreators.studio")
+    meta(property="og:email" content="info@mediacreators.studio")
+    meta(property="og:image" content="https://mediacreators.studio/og-card.jpg")
+    meta(property="og:video" content="https://mediacreators.studio/video/showreel-fullscreen@720p.mp4")
+    meta(property="og:video:width" content="1280")
+    meta(property="og:video:height" content="720")
+
+    meta(name="twitter:card" content="summary_large_image")
+    meta(name="twitter:title" content=meta.seo_title)
+    meta(name="twitter:description" content=meta.seo_description)
+    meta(name="twitter:image" content=meta.seo_image ? meta.seo_image.url : '')
+
+  body
+    include ./partials/preloader
+    include ./partials/navigation
+
+    .content#content(data-template=template)
+      block content
+    
+    //- script(async, defer, src="https://static.cdn.prismic.io/prismic.js?new=true&repo=media-creators-studio")
+    
+    script.
+      window.ASSETS = !{JSON.stringify(assets).replace(/<\//g, "<\\/")}
+
+    // * fps v1.0.0 — https://www.cssscript.com/javascript-library-check-display-frames-per-second-fps/
+    script(defer).
+      !function(){"use strict";var t=function(t){this.init(t)};t.prototype={constructor:t,init:function(t){"string"==typeof t&&(t=document.querySelector(t)),this._fps=0,this._frames=0,this._startTime=Date.now(),this._element=this._createElement("div","position:fixed;top:2em;left:2em;z-index:9999;background-color:#eee;display:inline;margin:1px;padding:4px;border:1px solid #888;font-family:arial,sans-serif;font-size:9px;color:#333",t||document.body)},getElement:function(){return this._element},getFPS:function(){return this._fps},start:function(){this._animationFrameId||this._loop()},stop:function(){this._animationFrameId&&(window.cancelAnimationFrame(this._animationFrameId),this._animationFrameId=null)},step:function(){this._frames++;var t=Date.now(),i=t-this._startTime;i>=1e3&&(this._fps=Math.round(1e3*this._frames/i),this._frames=0,this._startTime=t,this._updateDisplay())},_loop:function(){this.step(),this._animationFrameId=window.requestAnimationFrame(this._loop.bind(this))},_updateDisplay:function(){this._element.innerHTML="<b>"+this._fps+"</b> fps"},_createElement:function(t,i,e){var n=document.createElement(t);if(n)return i&&(n.style.cssText=i),e&&e.appendChild(n),n}},window.FPS=t}();
+
+      var fps = new FPS("#container");
+      fps.start();
+
+      setTimeout(_ => {
+        if (fps._fps > 30 ) {
+          //- alert("more then 30fps")
+          document.documentElement.classList.add('60fps')
+        } else {
+          //- alert("less then 30fps")
+          document.documentElement.classList.add('30fps')
+        }
+      }, 2000)
+
+    script(src="main.js")
+    script(defer, src="common.js")
+
+    script(defer, src=`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`)
+    script(defer).
+      window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date()); gtag('config', "UA-146657896-1")

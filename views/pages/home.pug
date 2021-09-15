@@ -1,0 +1,116 @@
+extends ../base.pug
+
+block variables
+  - var template = 'home'
+
+
+block content
+  .home(data-background="#6a6a6a" data-color="#fff")
+    .home__wrapper
+
+      .home__hero
+        h2.home__intro__title(data-animation="title")!=home.data.title.replace(/\n/g, '<br>')
+
+      //- section.home__hero.is-fixed
+      //-   //- lottie-interactive.is-fixed(path="/bubble.json" autoplay loop view-box="0 0 1920 1080" interaction="click")
+      //-   //- include ../bubbles/home-primary
+      //-   .home__hero__wrapper
+      //-     .home__hero__left
+      //-       .home__hero__topics
+      //-         each topic in home.data.hero
+      //-           a(data-animation="title" href=`${lang}/${topic.topic_parent_page.uid}/${topic.topic_link.uid}/`)=topic.topic_text
+      //-       .home__hero__button(data-animation="title")
+      //-         a(href="#studio")=home.data.hero_button
+
+      //-     .home__hero__right
+      //-       video.home__hero__video(poster=`${home.data.showreel_preview.url}` preload='auto' playsinline='true' autoplay='true' loop='true' muted='true' disablepictureinpicture='true' src=`${home.data.showreel.url}`)
+      //-       .home__hero__description!=PrismicDOM.RichText.asHtml(home.data.hero_description).replace(/<p>/g, '<p data-animation="title">')
+
+      //- section.home__intro#studio
+      //-   //- include ../bubbles/home-secondary
+      //-   .home__intro__wrapper
+      //-     .home__intro__left
+      //-       h2.home__intro__title(data-animation="title")=home.data.intro_title
+
+      //-     .home__intro__right
+      //-       h3.home__intro__subtitle(data-animation="title")=home.data.intro_subtitle
+      //-       .home__intro__description!=PrismicDOM.RichText.asHtml(home.data.intro_description).replace(/<p>/g, '<p data-animation="title">')
+      //-       div(data-animation="title")
+      //-         a.home__intro__button(href=Link(home.data.intro_link))=home.data.intro_button
+
+      //- section.home__approach 
+      //-   .home__approach__wrapper
+      //-     h2.home__approach__title(data-animation="title")=home.data.approach_title
+
+      //-     .home__workflow
+      //-       each item in workflow
+      //-         .workflow__item 
+      //-           figure.workflow__item__media
+      //-             img.workflow__item__media__image(alt=item.image.alt data-src=item.image.url)
+
+      //-           h3.workflow__item__title 
+      //-             .workflow__item__title__number(data-animation="title")=`0${item.item_number}`
+      //-             .workflow__item__title__text(data-animation="title")=item.item_title
+      //-           p.workflow__item__description(data-animation="paragraph")=item.item_description
+        
+      //- section.home__packs 
+      //-   .home__packs__wrapper
+      //-     .home__packs__left
+      //-       h2.home__packs__title(data-animation="title")=home.data.packs_title
+      //-       .home__packs__description!=PrismicDOM.RichText.asHtml(home.data.packs_description).replace(/<p>/g, '<p data-animation="paragraph">')
+      //-       div(data-animation="title")
+      //-         a.home__packs__button(href=Link(home.data.packs_link))=home.data.packs_button
+
+      //-     .home__packs__right
+      //-       each pack in packs
+      //-         each pack_on_page in home.data.packs
+      //-           if (pack.uid === pack_on_page.pack.uid)
+      //-             .home__packs__pack
+      //-               a.packs__pack(href=`/${lang}/${pack.data.parent_page.uid}/${pack.uid}/`)
+      //-                 h3.packs__pack__title(data-animation="title")!=pack.data.title.replace(/\n/g, '<br>')
+      //-                 .packs__pack__price(data-animation="title")=`€${pack.data.price}`
+
+      //-                 each feature in pack.data.features
+      //-                   .packs__pack__feature(data-animation="title")=feature.feature_title
+
+      //- section.home__form 
+      //-   .home__form__wrapper
+      //-     h2.home__form__title(data-animation="title")=home.data.form_title
+      //-     p.home__form__description(data-animation="title")=home.data.form_description
+
+      //-     form.home__form__form(name='home' method='POST' action='/thank-you')
+      //-       input(type='hidden' name='form-name' value='home')
+      //-       .home__form__col
+      //-         label.select
+      //-           span.sr-only Services:
+      //-           select.select-field(name='services' required)
+      //-             option(value='' disabled='' selected='')=globals[0].data.select_service
+      //-             each service in globals[0].data.select_service_list
+      //-               option(value=`${service.service_list_item}`)=service.service_list_item
+      //-         label
+      //-           span.sr-only=`${globals[0].data.name}:`
+      //-           input#name(type='text' name='name' placeholder=`${globals[0].data.name}` required)
+      //-         label
+      //-           span.sr-only=`${globals[0].data.company}:`
+      //-           input#company-project(type='text' name='company-project' placeholder=`${globals[0].data.company}` required)
+      //-         label
+      //-           span.sr-only=`${globals[0].data.message}:`
+      //-           textarea#note(name='note' placeholder=`${globals[0].data.message}` required rows='3')
+      //-       .home__form__col
+      //-         label
+      //-           span.sr-only=`${globals[0].data.preferred_meeting_date}:`
+      //-           input#meeting-date(type='text' name='meeting-date' placeholder=`${globals[0].data.preferred_meeting_date}` onfocus="(this.type='date')" required)
+      //-         label.select
+      //-           span.sr-only=`${globals[0].data.contact_preferred_way}:`
+      //-           select#contact-way.select-field(name='contact-way' required)
+      //-             option(value='' disabled='' selected='')=`${globals[0].data.contact_preferred_way}`
+      //-             each contact in globals[0].data.contact_preferred_way_list
+      //-               option(value=`${contact.contact_preferred_way_item}`)=contact.contact_preferred_way_item
+      //-         label
+      //-           span.sr-only Your contact:
+      //-           input#contact(name='contact' placeholder='Your contact' disabled='' required)
+      //-         input.home__form__button(type='submit' value=`${globals[0].data.message_button}`)
+
+        
+
+      include ../partials/footer

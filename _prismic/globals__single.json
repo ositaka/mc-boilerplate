@@ -1,0 +1,128 @@
+{
+  "Main": {
+    "next_project": {
+      "type": "Text",
+      "config": {
+        "label": "Next Project"
+      }
+    }
+  },
+  "Forms": {
+    "name": {
+      "type": "Text",
+      "config": {
+        "label": "Name"
+      }
+    },
+    "company": {
+      "type": "Text",
+      "config": {
+        "label": "Company"
+      }
+    },
+    "email": {
+      "type": "Text",
+      "config": {
+        "label": "Email"
+      }
+    },
+    "preferred_meeting_date": {
+      "type": "Text",
+      "config": {
+        "label": "Preferred meeting date"
+      }
+    },
+    "message": {
+      "type": "Text",
+      "config": {
+        "label": "Message"
+      }
+    },
+    "message_button": {
+      "type": "Text",
+      "config": {
+        "label": "Message Button"
+      }
+    },
+    "select_service": {
+      "type": "Text",
+      "config": {
+        "label": "Select Service"
+      }
+    },
+    "select_service_list": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "service_list_item": {
+            "type": "Text",
+            "config": {
+              "label": "Service List Item"
+            }
+          }
+        },
+        "label": "Select Service List"
+      }
+    },
+    "contact_preferred_way": {
+      "type": "Text",
+      "config": {
+        "label": "Contact Preferred Way"
+      }
+    },
+    "contact_preferred_way_list": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "contact_preferred_way_item": {
+            "type": "Text",
+            "config": {
+              "label": "Contact Preferred Way Item"
+            }
+          },
+          "contact_preferred_way_placeholder": {
+            "type": "Text",
+            "config": {
+              "label": "Contact Preferred Way Placeholder"
+            }
+          }
+        },
+        "label": "Contact Preferred Way list"
+      }
+    }
+  },
+  "Packs": {
+    "contacts": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "contact_us_on": {
+            "type": "Text",
+            "config": {
+              "label": "Contact us on"
+            }
+          },
+          "messenger": {
+            "type": "Text",
+            "config": {
+              "label": "Messenger"
+            }
+          },
+          "whats_app": {
+            "type": "Text",
+            "config": {
+              "label": "Whats App"
+            }
+          },
+          "skype": {
+            "type": "Text",
+            "config": {
+              "label": "Skype"
+            }
+          }
+        },
+        "label": "Contacts (Pack Page)"
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+extends ../base.pug
+
+block variables
+  - var template = 'work_page'
+
+block content
+  .work_page(data-background="#fff" data-color="#000")
+    .work_page__wrapper
+
+      .work_page__header
+        h3.work_page__project(data-animation="title")=work_page.data.kind_of_work
+        .work_page__title(data-animation="title")
+          h2=work_page.data.title
+
+      .work_page__body
+        each section in work_page.data.body 
+
+          if (section.slice_type === 'parallax')
+            .work_page__parallax
+              figure.work_page__parallax__media
+                if (section.primary.is_video === true)
+                  video(poster=`${section.primary.parallax_image.url}` preload="auto" playsinline autoplay loop muted disablepictureinpicture)
+                    source(src=`${section.primary.video.url}` type="video/mp4")
+                else
+                  img.work_page__parallax__media__image(alt=section.primary.parallax_image.alt data-src=section.primary.parallax_image.url height=`${section.primary.parallax_image.dimensions.height}`)
+
+          if (section.slice_type === 'video')
+            .work_page__video
+              .work_page__video__wrapper(style=`background-color: ${section.primary.background_color}`)
+                video(poster=`${section.primary.image.url}` preload="auto" playsinline autoplay loop muted disablepictureinpicture)
+                  source(src=`${section.primary.video.url}` type="video/mp4")
+
+          if (section.slice_type === 'gallery')
+            - var isFlipped = section.primary.flip_gallery === true
+            
+            div(class=`work_page__gallery ${isFlipped ? 'flipped' : '' }`)
+
+              - var total = section.items.length 
+              - var totalDivided = Math.round(total / 2)
+                
+              | <div class="work_page__gallery__col">
+              - var count = 0;
+                each item in section.items
+
+                  if (isFlipped)
+                    if count === totalDivided - 1
+                      | </div>
+                      | <div class="work_page__gallery__col">
+
+                  else
+                    if count === totalDivided
+                      | </div>
+                      | <div class="work_page__gallery__col">
+
+                  figure.work_page__gallery__media
+                    if (item.is_video === true)
+                      video(preload="auto" playsinline autoplay loop muted disablepictureinpicture)
+                        source(src=`${item.gallery_video.url}` type="video/mp4")
+                    else
+                      img.work_page__gallery__media__image(alt=item.gallery_image.alt data-src=item.gallery_image.url width=`${item.gallery_image.dimensions.width}` height=`${item.gallery_image.dimensions.height}`)
+
+                  if (item.gallery_image_caption)
+                    p.work_page__gallery__media__caption(data-animation="title")=item.gallery_image_caption
+                      
+                  - count++;
+                | </div>
+
+          if (section.slice_type === 'info')
+            .work_page__info
+
+              if (section.primary.title_size === 'Small')
+                .work_page__info__small
+                  h3.work_page__info__title(data-animation="title")!=section.primary.info_title.replace(/\n/g, '<br>')
+                  .work_page__info__description!=PrismicDOM.RichText.asHtml(section.primary.info_description).replace(/<p>/g, '<p data-animation="title">')
+
+              else
+                .work_page__info__big
+                  h3.work_page__info__title(data-animation="title")!=section.primary.info_title.replace(/\n/g, '<br>')
+
+      .work_page__next
+        .work_page__next__marquee__list
+          .work_page__next__marquee__list__content
+            //- a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/`)=globals[0].data.next_project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+          .work_page__next__marquee__list__content.work_page__next__marquee__list__content__copy
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") next
+
+        .work_page__next__marquee__list
+          .work_page__next__marquee__list__content
+            //- a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title")=globals[0].data.next_project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+          .work_page__next__marquee__list__content.work_page__next__marquee__list__content__copy
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+            a.work_page__next__link(href=`/${lang}/${work_page.uid}/${work_page.data.next_project.uid}/` data-animation="title") project
+
+      include ../partials/footer

@@ -1,0 +1,25 @@
+.page {
+  @extend %page;
+
+  // background: $color-grey-light;
+  // color: $color-grey-dark;
+}
+
+.page__wrapper {
+}
+
+// hero
+.page__hero {
+  @extend %full-height;
+  @extend %transition-2s;
+}
+
+.page__title {
+  @extend %title-86;
+
+  text-align: center;
+
+  @include media('<phone') {
+    margin-bottom: 6rem;
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "Main": {
+    "title": {
+      "type": "Text",
+      "config": {
+        "label": "Title"
+      }
+    },
+    "button": {
+      "type": "Text",
+      "config": {
+        "label": "Button"
+      }
+    },
+    "link": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": ["contacts"],
+        "label": "Link"
+      }
+    },
+    "navigation": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "link": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "label": "Link"
+            }
+          },
+          "link_text": {
+            "type": "Text",
+            "config": {
+              "label": "Link Text"
+            }
+          }
+        },
+        "label": "Navigation"
+      }
+    },
+    "address": {
+      "type": "Text",
+      "config": {
+        "label": "Address"
+      }
+    },
+    "email_text": {
+      "type": "Text",
+      "config": {
+        "label": "Email Text"
+      }
+    }
+  }
+}

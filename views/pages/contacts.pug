@@ -1,0 +1,35 @@
+extends ../base.pug
+
+block variables
+  - var template = 'contacts'
+
+block content
+  .contacts(data-background="#3a3a3a" data-color="#fff")
+    .contacts__wrapper
+
+      .contacts__hero
+        h2.contacts__title(data-animation="title")!=contacts.data.title.replace(/\n/g, '<br>')
+
+
+      //- .contacts__body.is-fixed
+      //-   .contacts__header
+      //-     h2.contacts__title(data-animation="title")!=contacts.data.title.replace(/\n/g, '<br>')
+      //-     p.contacts__description(data-animation="paragraph")!=contacts.data.description.replace(/\n/g, '<br>')
+
+      //-   .contacts__form__wrapper
+      //-     form.contacts__form__form(name='contact' method='POST' action='/send')
+      //-       input(type='hidden' name='form' value='contact')
+      //-       .contacts__form__col
+      //-         label
+      //-           span.sr-only Name:
+      //-           input#name(type='text' name='name' placeholder='Name' required)
+      //-         label
+      //-           span.sr-only Describe your idea:
+      //-           textarea#note(name='message' placeholder='Describe your idea' required rows='6')
+      //-       .contacts__form__col
+      //-         label
+      //-           span.sr-only E-mail address:
+      //-           input#email(type='email' name='email' placeholder='Your e-mail address' required)
+      //-         input.contacts__form__button(type='submit' value='Send message')
+
+      include ../partials/footer

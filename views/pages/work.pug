@@ -1,0 +1,27 @@
+extends ../base.pug
+
+block variables
+  - var template = 'work'
+
+block content
+  .work(data-background="#3131f1" data-color="#fff")
+    .work__wrapper
+      .work__hero.is-fixed
+        .bubble
+          lottie-interactive(path="/bubble.json" autoplay loop view-box="0 0 1920 1080" interaction="scroll")
+        h2.work__title(data-animation="title")!=work.data.title.replace(/\n/g, '<br>')
+      .work__description!=PrismicDOM.RichText.asHtml(work.data.description).replace(/<p>/g, '<p data-animation="paragraph">')
+      
+      .work__list#all-projects
+        each item in work.data.works
+          a.work__list__item(href=`/${lang}/${work.uid}/${item.work_link.uid}`)
+            figure.work__list__media
+              img.work__list__media__image(alt=item.work_image.alt data-src=item.work_image.url height=`${item.work_image.dimensions.height}` width=`${item.work_image.dimensions.width}`)
+
+            h3.work__list__title(data-animation="title")=item.work_title
+            p.work__list__medias(data-animation="title")=item.work_medias
+
+        div(data-animation="title")
+          a.work__button(href="#all")!=work.data.button
+      
+      include ../partials/footer

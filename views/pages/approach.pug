@@ -1,0 +1,32 @@
+extends ../base.pug
+
+block variables
+  - var template = 'approach'
+
+block content
+  .approach(data-background="#3131f1" data-color="#fff")
+    .approach__wrapper
+      .approach__body
+        .approach__text
+          h2.approach__title(data-animation="title")!=approach.data.title.replace(/\n/g, '<br>')
+          .approach__description!=PrismicDOM.RichText.asHtml(approach.data.description).replace(/<p>/g, '<p data-animation="title">')
+            div(data-animation="title")
+              a.approach__button(href="#workflow")!=approach.data.button
+
+        .approach__workflow#workflow
+          .approach__workflow__title.is-fixed
+            h2=approach.data.workflow_title
+            
+          .approach__workflow__list
+            each item in approach.data.workflow
+              .workflow__item 
+                figure.workflow__item__media
+                  img.workflow__item__media__image(alt=item.image.alt data-src=item.image.url)
+
+                h3.workflow__item__title 
+                  .workflow__item__title__number(data-animation="title")=`0${item.item_number}`
+                  .workflow__item__title__text(data-animation="title")=item.item_title
+                p.workflow__item__description(data-animation="title")=item.item_description
+
+
+      include ../partials/footer

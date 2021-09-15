@@ -1,0 +1,21 @@
+.home {
+  @extend %page;
+
+  // background: $color-grey-light;
+  // color: $color-grey-dark;
+}
+
+.home__wrapper {
+}
+
+// hero
+.home__hero {
+  @extend %full-height;
+  @extend %transition-2s;
+}
+
+.home__intro__title {
+  @extend %title-86;
+
+  text-align: center;
+}

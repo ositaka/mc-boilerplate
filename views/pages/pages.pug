@@ -1,0 +1,16 @@
+
+extends ../base.pug
+
+block variables
+  - var template = 'pages'
+
+
+block content
+  .page(data-background="#6a6a6a" data-color="#fff")
+    .page__wrapper
+
+      .page__hero
+        h2.page__title=page.data.title
+
+
+      include ../partials/footer
