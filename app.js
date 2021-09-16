@@ -51,7 +51,7 @@ const handleLinkResolver = (doc) => {
     return (doc.data.parent_page.id ? `/${doc.lang}/${doc.data.parent_page.uid}/${doc.uid}/` : `/${doc.lang}/${doc.uid}/`)
   }
 
-  if (doc.type === 'the_creators') {
+  if (doc.type === 'team') {
     return `/${doc.lang}/${doc.uid}/`;
   }
 
@@ -171,11 +171,11 @@ app.get('/:lang/:uid/', async (req, res) => {
   const api = await initApi(req);
   const defaults = await handleRequest(api, lang);
 
-  // const work = await api.getByUID('work', uid, { lang });
-  // const the_creators = await api.getByUID('the_creators', uid, { lang });
-  const services = await api.getByUID('services', uid, { lang });
-  const page = await api.getByUID('page', uid, { lang });
   const contacts = await api.getByUID('contacts', uid, { lang });
+  const page = await api.getByUID('page', uid, { lang });
+  const services = await api.getByUID('services', uid, { lang });
+  const team = await api.getByUID('team', uid, { lang });
+  // const work = await api.getByUID('work', uid, { lang });
 
 
   if (page) {
@@ -185,7 +185,6 @@ app.get('/:lang/:uid/', async (req, res) => {
 
     const { results: parent_en } = await api.query(Prismic.Predicates.at('document.type', 'page'), { lang: "en-gb" })
     const { results: parent_pt } = await api.query(Prismic.Predicates.at('document.type', 'page'), { lang: "pt-pt" })
-
 
     altLangs = page.alternate_languages
     meta = page.data.seo[0]
@@ -225,6 +224,19 @@ app.get('/:lang/:uid/', async (req, res) => {
 
   }
 
+  else if (team) {
+    altLangs = team.alternate_languages
+    meta = team.data.seo[0]
+
+    res.render('pages/team', {
+      ...defaults,
+      altLangs,
+      lang,
+      meta,
+      team,
+    });
+  }
+
   else if (contacts) {
     altLangs = contacts.alternate_languages
     meta = contacts.data.seo[0]
@@ -260,19 +272,6 @@ app.get('/:lang/:uid/', async (req, res) => {
 
   // }
 
-  // else if (the_creators) {
-  //   altLangs = the_creators.alternate_languages
-  //   meta = the_creators.data.seo[0]
-
-  //   res.render('pages/the_creators', {
-  //     ...defaults,
-  //     altLangs,
-  //     lang,
-  //     meta,
-  //     the_creators,
-  //   });
-
-  // }
 
 });
 
@@ -395,8 +394,8 @@ app.post('/send', (req, res) => {
     ,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: 'nuno@mediacreators.studio', // generated ethereal user
-      pass: '72QGxIWOYTfRtjKV'  // generated ethereal password
+      user: 'email@project-name.com', // generated ethereal user
+      pass: 'XXXXXXXXXXXXX'  // generated ethereal password
     },
     tls: {
       rejectUnauthorized: false
@@ -405,68 +404,10 @@ app.post('/send', (req, res) => {
 
   // setup email data with unicode symbols
   let mailOptions = {
-    from: '"Media Creators Studio" <info@mediacreators.studio>', // sender address
-    to: `${req.body.email}, info@mediacreators.studio`, // list of receivers
-    bcc: 'ositaka@gmail.com', // list of receivers
+    from: '"Media Creators Studio" <info@project-name.com>', // sender address
+    to: `${req.body.email}, info@project-name.com`, // list of receivers
+    bcc: 'bcc@project-name.com', // list of receivers
     subject: 'New Contact Message', // Subject line
-    text: 'Hello world?', // plain text body
-    html: output // html body
-  };
-
-  // send mail with defined transport object
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return console.log(error);
-    }
-    console.log('Message sent: %s', info.messageId);
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-
-    res.render('pages/email_sent', {
-      msg: 'Email has been sent',
-      output
-    });
-  });
-});
-
-
-app.post('/send-pack', (req, res) => {
-  const output = `
-    <p>New "${req.body.form}" pack request</p>
-    <h3>Contact Details</h3>
-    <ul>  
-      <li>Name: ${req.body.name}</li>
-      <li>Company: ${req.body.company}</li>
-      <li>Email: ${req.body.email}</li>
-    </ul>
-    <h3>Message</h3>
-    <p>${req.body.message}</p>
-    <hr />
-    <h4>Price: €${req.body.price}</h4>
-  `;
-
-  console.log("form sent")
-
-  // create reusable transporter object using the default SMTP transport
-  let transporter = nodemailer.createTransport({
-    host: 'smtp-relay.sendinblue.com',
-    port: 587
-    ,
-    secure: false, // true for 465, false for other ports
-    auth: {
-      user: 'nuno@mediacreators.studio', // generated ethereal user
-      pass: '72QGxIWOYTfRtjKV'  // generated ethereal password
-    },
-    tls: {
-      rejectUnauthorized: false
-    }
-  });
-
-  // setup email data with unicode symbols
-  let mailOptions = {
-    from: '"Media Creators Studio" <info@mediacreators.studio>', // sender address
-    to: `${req.body.email}, info@mediacreators.studio`, // list of receivers
-    bcc: 'ositaka@gmail.com', // list of receivers
-    subject: `New "${req.body.form}" pack request`, // Subject line
     text: 'Hello world?', // plain text body
     html: output // html body
   };

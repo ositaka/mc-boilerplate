@@ -1,19 +1,19 @@
-.the_creators {
+.team {
   @extend %page;
 
   // background: $color-grey-light;
   // color: $color-grey-dark;
 }
 
-.the_creators__wrapper {
+.team__wrapper {
   padding-top: 2rem;
 }
 
-.the_creators__hero {
+.team__hero {
   @extend %full-height;
 }
 
-.the_creators__hero__wrapper {
+.team__hero__wrapper {
   @extend %two-cols;
 
   align-items: center;
@@ -25,7 +25,7 @@
   }
 }
 
-.the_creators__left {
+.team__left {
   @extend %two-cols__left;
 
   text-align: right;
@@ -36,7 +36,7 @@
   }
 }
 
-.the_creators__right {
+.team__right {
   @extend %two-cols__right;
 
   width: 74rem;
@@ -46,29 +46,20 @@
   }
 }
 
-.the_creators__topics {
+.team__topics {
   @extend %title-86;
 
   margin: 2rem 0 4rem;
 }
 
-.typewritter__text {
-  margin-left: 2rem;
-}
-
-.the_creators__words__list {
-  display: none;
-  visibility: hidden;
-}
-
-.the_creators__button {
+.team__button {
   @extend %button-arrow__down;
 
   display: block;
   margin-top: 9rem;
 }
 
-.the_creators__media__image {
+.team__media__image {
   width: 74rem;
   margin-bottom: 4.5rem;
 
@@ -77,7 +68,7 @@
   }
 }
 
-.the_creators__creators {
+.team__persons {
   @extend %full-height;
 
   align-items: center;
@@ -96,7 +87,7 @@
   }
 }
 
-.the_creators__creators__item {
+.team__persons__item {
   width: 52rem;
 
   @include media('<phone') {
@@ -105,7 +96,7 @@
   }
 }
 
-.the_creators__creator__name {
+.team__person__name {
   @extend %title-32;
 
   @include media('<phone') {
@@ -113,7 +104,7 @@
   }
 }
 
-.the_creators__creator__role {
+.team__person__role {
   @extend %title-20;
 
   margin-bottom: 3.5rem;
@@ -126,7 +117,7 @@
   }
 }
 
-.the_creators__creator__bio {
+.team__person__bio {
   @extend %text-32;
 
   letter-spacing: 0.05rem;
@@ -141,43 +132,5 @@
 
   & a {
     text-decoration: underline;
-  }
-}
-
-.the_creators__message {
-  @extend %full-height;
-
-  margin: auto;
-  width: 126rem;
-
-  @include media('<phone') {
-    display: block;
-    width: 88%;
-  }
-}
-
-.the_creators__message__title {
-  @extend %title-39;
-
-  margin-bottom: 10.6rem;
-  margin-left: 42rem;
-  width: 80rem;
-
-  @include media('<phone') {
-    font-size: 4.8rem;
-    margin-left: 0;
-    width: 100%;
-  }
-}
-
-.the_creators__message__description {
-  @extend %text-32;
-
-  margin-left: 65rem;
-  width: 52rem;
-
-  @include media('<phone') {
-    margin-left: 0;
-    width: 100%;
   }
 }

@@ -12,20 +12,6 @@
         "label": "Title"
       }
     },
-    "words": {
-      "type": "Group",
-      "config": {
-        "fields": {
-          "word": {
-            "type": "Text",
-            "config": {
-              "label": "Word"
-            }
-          }
-        },
-        "label": "Words"
-      }
-    },
     "button": {
       "type": "Text",
       "config": {
@@ -46,7 +32,7 @@
         "label": "Image"
       }
     },
-    "creators": {
+    "persons": {
       "type": "Group",
       "config": {
         "fields": {
@@ -71,20 +57,7 @@
             }
           }
         },
-        "label": "Creators"
-      }
-    },
-    "message_title": {
-      "type": "Text",
-      "config": {
-        "label": "Message Title"
-      }
-    },
-    "message_description": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph,strong,em,hyperlink",
-        "label": "Message Description"
+        "label": "Persons"
       }
     }
   },

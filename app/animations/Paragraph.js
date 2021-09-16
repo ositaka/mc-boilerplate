@@ -1,23 +1,33 @@
-// import GSAP from 'gsap'
-// import each from 'lodash/each'
-
+import GSAP from 'gsap'
 import Animation from 'classes/Animation'
-// import Component from 'gia/Component';
-
 export default class Paragraph extends Animation {
-  constructor(element) {
-    super(element);
-
-    this.options = {
-      delay: 0.3,
-    };
+  constructor({ element }) {
+    super({
+      element
+    })
   }
 
-  mount() {
-    let newContent = "";
-    this.element.innerText.split(' ').forEach(function (word, index) {
-      newContent += `<span><span style="animation-delay: ${0.6 + index * this.options.delay + 0.4}s">${word}</span></span> `;
-    }.bind(this));
-    this.element.innerHTML = newContent;
+  animateIn() {
+    this.timelineIn = GSAP.timeline({
+      delay: 0.2
+    })
+
+    // this.timelineIn.set(this.element, {
+    //   autoAlpha: 1
+    // })
+
+    this.timelineIn.fromTo(this.element, {
+      autoAlpha: 0
+    }, {
+      autoAlpha: 1,
+      duration: .3,
+    }, 0)
+
+  }
+
+  animateOut() {
+    GSAP.set(this.element, {
+      autoAlpha: 0
+    })
   }
 }

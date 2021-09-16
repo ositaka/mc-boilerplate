@@ -1,0 +1,31 @@
+extends ../base.pug
+
+block variables
+  - var template = 'team'
+
+block content
+  .team(data-background="#6a6a6a" data-color="#fff")
+    .team__wrapper
+
+      section.team__hero
+        .team__hero__wrapper
+          .team__left
+            .team__topics
+              h2.team__title(data-animation="title")!=team.data.title.replace(/\n/g, '<br>')
+              .team__button(data-animation="title")
+                a(href="#team")=team.data.button
+
+          .team__right
+            figure.team__media
+              img.team__media__image(alt=team.data.image.alt data-src=team.data.image.url)
+
+
+      section.team__persons#team
+        each person in team.data.persons 
+          .team__persons__item
+            h3.team__person__name(data-animation="title")!=person.name
+            h4.team__person__role!=person.role
+
+            .team__person__bio!=PrismicDOM.RichText.asHtml(person.bio).replace(/<p>/g, '<p data-animation="paragraph">')
+
+      include ../partials/footer

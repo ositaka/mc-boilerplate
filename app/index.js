@@ -14,7 +14,7 @@ import Intro from 'pages/Intro';
 import Home from 'pages/Home';
 // import Work from 'pages/Work';
 // import WorkPage from 'pages/WorkPage';
-// import TheCreators from 'pages/TheCreators';
+import Team from 'pages/Team';
 import Services from 'pages/Services';
 import ServicePage from 'pages/ServicePage';
 import Pages from 'pages/Pages';
@@ -77,7 +77,7 @@ class App {
       home: new Home(),
       // work: new Work(),
       // work_page: new WorkPage(),
-      // the_creators: new TheCreators(),
+      team: new Team(),
       services: new Services(),
       service_page: new ServicePage(),
       pages: new Pages(),
