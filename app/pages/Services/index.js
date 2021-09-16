@@ -1,19 +1,18 @@
 import Page from 'classes/Page'
 
-export default class PricePacks extends Page {
+export default class Services extends Page {
     constructor() {
         super({
-            id: 'price_packs',
+            id: 'services',
 
-            element: '.price_packs',
+            element: '.services',
             elements: {
-                wrapper: '.price_packs__wrapper',
+                wrapper: '.services__wrapper',
                 navigation: '.navigation',
-                title: '.price_packs__title'
+                title: '.services__title'
             },
             langs: {
                 en: '#en',
-                nl: '#nl',
                 pt: '#pt',
             }
         })

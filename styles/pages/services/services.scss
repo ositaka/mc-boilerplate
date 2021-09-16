@@ -1,0 +1,75 @@
+.services {
+  @extend %page;
+
+  // background: $color-grey-light;
+  // color: $color-grey-dark;
+}
+
+.services__wrapper {
+  padding-top: 10rem;
+}
+
+.services__header {
+  display: flex;
+  margin: 18rem auto 3.2rem;
+  width: 140rem;
+
+  @include media('<phone') {
+    display: block;
+    margin-bottom: 12rem;
+    margin-top: 24rem;
+    width: 88%;
+  }
+}
+
+.services__title {
+  @extend %title-100;
+
+  margin-right: 12rem;
+  width: 60.7rem;
+
+  @include media('<phone') {
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+.services__description {
+  font-size: 2.08rem;
+  line-height: 3.45rem;
+  margin-top: 2.2rem;
+  padding-right: 2rem;
+  width: 60.7rem;
+
+  @include media('<phone') {
+    font-size: 3.2rem;
+    line-height: 6rem;
+    letter-spacing: -0.02rem;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    padding-right: 0;
+    width: 100%;
+  }
+}
+
+.services__button {
+  @extend %button-arrow__down;
+
+  display: block;
+  padding: 3.2rem 0;
+
+  @include media('<phone') {
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+  }
+}
+
+.services__services {
+  @extend %full-height;
+}
+
+.services__services__title {
+  @extend %title-100;
+
+  text-align: center;
+}

@@ -63,7 +63,7 @@ const handleLinkResolver = (doc) => {
     return `/${doc.lang}/${doc.uid}/`;
   }
 
-  if (doc.type === 'price_packs') {
+  if (doc.type === 'services') {
     return `/${doc.lang}/${doc.uid}/`;
   }
 
@@ -174,7 +174,7 @@ app.get('/:lang/:uid/', async (req, res) => {
   // const the_media = await api.getByUID('the_media', uid, { lang });
   // const work = await api.getByUID('work', uid, { lang });
   // const the_creators = await api.getByUID('the_creators', uid, { lang });
-  // const price_packs = await api.getByUID('price_packs', uid, { lang });
+  const services = await api.getByUID('services', uid, { lang });
   const page = await api.getByUID('page', uid, { lang });
   const contacts = await api.getByUID('contacts', uid, { lang });
 
@@ -203,6 +203,27 @@ app.get('/:lang/:uid/', async (req, res) => {
       parent_en,
       parent_pt
     });
+  }
+
+  else if (services) {
+    altLangs = services.alternate_languages
+    meta = services.data.seo[0]
+
+    // const { results: packs } = await api.query(Prismic.Predicates.at('document.type', 'pack'), {
+    //   lang,
+    //   fetchLinks: 'pack.title',
+    //   orderings: '[document.first_publication_date]',
+    // })
+
+    res.render('pages/services', {
+      ...defaults,
+      altLangs,
+      lang,
+      meta,
+      services,
+      // packs,
+    });
+
   }
 
   else if (contacts) {
@@ -275,27 +296,6 @@ app.get('/:lang/:uid/', async (req, res) => {
 
   // }
 
-  // else if (price_packs) {
-  //   altLangs = price_packs.alternate_languages
-  //   meta = price_packs.data.seo[0]
-
-  //   const { results: packs } = await api.query(Prismic.Predicates.at('document.type', 'pack'), {
-  //     lang,
-  //     fetchLinks: 'pack.title',
-  //     orderings: '[document.first_publication_date]',
-  //   })
-
-  //   res.render('pages/price_packs', {
-  //     ...defaults,
-  //     altLangs,
-  //     lang,
-  //     meta,
-  //     price_packs,
-  //     packs,
-  //   });
-
-  // }
-
 });
 
 
@@ -321,8 +321,8 @@ app.get('/:lang/:parent_page/:uid/', async (req, res) => {
   //   })
 
   //   const { results: globals } = await api.query(Prismic.Predicates.at('document.type', 'globals'), { lang })
-  //   const { results: parent_en } = await api.query(Prismic.Predicates.at('document.type', 'price_packs'), { lang: "en-gb" })
-  //   const { results: parent_pt } = await api.query(Prismic.Predicates.at('document.type', 'price_packs'), { lang: "pt-pt" })
+  //   const { results: parent_en } = await api.query(Prismic.Predicates.at('document.type', 'services'), { lang: "en-gb" })
+  //   const { results: parent_pt } = await api.query(Prismic.Predicates.at('document.type', 'services'), { lang: "pt-pt" })
 
   //   console.log(globals[0].data.contacts[0])
 

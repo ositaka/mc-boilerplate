@@ -1,0 +1,34 @@
+extends ../base.pug
+
+block variables
+  - var template = 'services'
+
+block content
+  .services(data-background="#1a1a1a" data-color="#fff")
+    .services__wrapper
+      
+      .services__header
+        h2.services__title(data-animation="title")!=services.data.title.replace(/\n/g, '<br>')
+        .services__text
+          p.services__description(data-animation="title")!=services.data.description
+            br
+            a.services__button(href="#services")=services.data.button
+          //- div(data-animation="title")
+
+      .services__services#services
+        h2.services__services__title(data-animation="title") services list
+      //-   each pack in packs
+      //-     a.packs__pack(href=`/${lang}/${pack.data.parent_page.uid}/${pack.uid}/`)
+      //-       h3.packs__pack__title(data-animation="title")!=pack.data.title.replace(/\n/g, '<br>')
+      //-       .packs__pack__price(data-animation="title")=`€${pack.data.price}`
+
+      //-       each feature in pack.data.features
+      //-         .packs__pack__feature(data-animation="title")=feature.feature_title
+
+      //-   a.packs__pack.packs__pack__info(href=`/${lang}/${services.data.info_link.uid}/`)
+      //-     h3.packs__pack__info__title(data-animation="title")!=services.data.info_title.replace(/\n/g, '<br>')
+      //-     .packs__pack__info__message(data-animation="title")=services.data.info_message
+      //-     .packs__pack__info__button(data-animation="title")=services.data.info_button
+
+
+      include ../partials/footer

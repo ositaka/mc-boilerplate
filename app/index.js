@@ -16,7 +16,7 @@ import Home from 'pages/Home';
 // import Work from 'pages/Work';
 // import WorkPage from 'pages/WorkPage';
 // import TheCreators from 'pages/TheCreators';
-// import PricePacks from 'pages/PricePacks';
+import Services from 'pages/Services';
 // import Pack from 'pages/Pack';
 import Pages from 'pages/Pages';
 import Contacts from 'pages/Contacts';
@@ -80,7 +80,7 @@ class App {
       // work: new Work(),
       // work_page: new WorkPage(),
       // the_creators: new TheCreators(),
-      // price_packs: new PricePacks(),
+      services: new Services(),
       // pack: new Pack(),
       pages: new Pages(),
       contacts: new Contacts(),
