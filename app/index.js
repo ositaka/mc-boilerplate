@@ -13,8 +13,6 @@ import About from 'pages/About';
 import Intro from 'pages/Intro';
 import Home from 'pages/Home';
 // import TheMedia from 'pages/TheMedia';
-// import MediaPage from 'pages/MediaPage';
-// import Approach from 'pages/Approach';
 // import Work from 'pages/Work';
 // import WorkPage from 'pages/WorkPage';
 // import TheCreators from 'pages/TheCreators';
@@ -79,8 +77,6 @@ class App {
       intro: new Intro(),
       home: new Home(),
       // the_media: new TheMedia(),
-      // media_page: new MediaPage(),
-      // approach: new Approach(),
       // work: new Work(),
       // work_page: new WorkPage(),
       // the_creators: new TheCreators(),

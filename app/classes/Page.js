@@ -134,7 +134,7 @@ export default class Page {
           autoAlpha: 0
         }, {
           autoAlpha: 1,
-          duration: 0.3
+          duration: 0.3,
         })
       }
 
