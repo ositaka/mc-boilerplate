@@ -22,3 +22,84 @@
     margin-bottom: 2rem;
   }
 }
+
+// form
+.contacts__form {
+  width: 137.5rem;
+  margin: 0 auto 20rem;
+
+  @include media('<phone') {
+    width: 88%;
+  }
+}
+
+.contacts__form__title {
+  @extend %title-86;
+
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.contacts__form__description {
+  @extend %text-16;
+
+  text-align: center;
+}
+
+.contacts__form__form {
+  display: flex;
+  margin-top: 6.4rem;
+
+  @include media('<phone') {
+    display: block;
+  }
+}
+
+.contacts__form__col {
+  width: 69rem;
+
+  &:first-child {
+    margin-right: 2.6rem;
+  }
+
+  &:last-child {
+    margin-left: 2.6rem;
+  }
+
+  @include media('<phone') {
+    width: 100%;
+
+    &:first-child {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.contacts__form__col > * {
+  display: block;
+  margin-bottom: 2.3rem;
+}
+
+.contacts__form__col > * > * {
+  background-color: $color-primary;
+  border: 1px solid white;
+  color: white;
+  padding: 2.8rem;
+  width: 100%;
+
+  &:focus {
+    background-color: $color-primary-dark;
+  }
+}
+
+.contacts__form__button {
+  @extend %button-primary;
+  background-color: $color-primary-light;
+
+  border: none;
+  margin-top: 6rem;
+}

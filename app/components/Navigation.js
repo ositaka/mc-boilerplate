@@ -55,7 +55,17 @@ export default class Navigation extends Component {
       })
     }
 
-    if (template === 'the_media' || template === 'media_page') {
+    if (template === 'home') {
+      GSAP.to(this.elements.items, {
+        duration: 1.5,
+        textDecoration: 'none'
+      })
+      GSAP.to(this.elements.items[0], {
+        duration: 1.5,
+        textDecoration: 'underline'
+      })
+
+    } else if (template === 'the_media' || template === 'media_page') {
 
       GSAP.to(this.elements.items, {
         duration: 1.5,

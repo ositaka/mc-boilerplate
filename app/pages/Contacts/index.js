@@ -16,7 +16,6 @@ export default class Contacts extends Page {
             },
             langs: {
                 en: '#en',
-                nl: '#nl',
                 pt: '#pt',
             }
         })

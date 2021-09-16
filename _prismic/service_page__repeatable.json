@@ -6,62 +6,30 @@
         "label": "UID"
       }
     },
+    "parent_page": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": ["price_packs", "services"],
+        "label": "Parent Page"
+      }
+    },
     "title": {
       "type": "Text",
       "config": {
         "label": "Title"
       }
     },
-    "description": {
+    "price": {
       "type": "Text",
       "config": {
-        "label": "Description"
+        "label": "Price"
       }
     },
     "button": {
       "type": "Text",
       "config": {
         "label": "Button"
-      }
-    },
-    "packs": {
-      "type": "Group",
-      "config": {
-        "fields": {
-          "pack": {
-            "type": "Link",
-            "config": {
-              "select": "document",
-              "customtypes": ["pack"],
-              "label": "Pack"
-            }
-          }
-        },
-        "label": "Packs"
-      }
-    },
-    "info_title": {
-      "type": "Text",
-      "config": {
-        "label": "Info Title"
-      }
-    },
-    "info_message": {
-      "type": "Text",
-      "config": {
-        "label": "Info Message"
-      }
-    },
-    "info_button": {
-      "type": "Text",
-      "config": {
-        "label": "Info Button"
-      }
-    },
-    "info_link": {
-      "type": "Link",
-      "config": {
-        "label": "Info Link"
       }
     }
   },

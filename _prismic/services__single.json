@@ -1,0 +1,55 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID"
+      }
+    },
+    "title": {
+      "type": "Text",
+      "config": {
+        "label": "Title"
+      }
+    },
+    "button": {
+      "type": "Text",
+      "config": {
+        "label": "Button"
+      }
+    }
+  },
+  "SEO": {
+    "seo": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "seo_title": {
+            "type": "Text",
+            "config": {
+              "label": "SEO Title",
+              "placeholder": "A line of text with less than 60 characters"
+            }
+          },
+          "seo_description": {
+            "type": "Text",
+            "config": {
+              "label": "SEO Description",
+              "placeholder": "Two line of text with less than 155 characters"
+            }
+          },
+          "seo_image": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "SEO Image"
+            }
+          }
+        },
+        "label": "SEO",
+        "repeat": false
+      }
+    }
+  }
+}

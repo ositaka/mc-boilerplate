@@ -12,12 +12,11 @@ import Preloader from 'components/Preloader';
 import About from 'pages/About';
 import Intro from 'pages/Intro';
 import Home from 'pages/Home';
-// import TheMedia from 'pages/TheMedia';
 // import Work from 'pages/Work';
 // import WorkPage from 'pages/WorkPage';
 // import TheCreators from 'pages/TheCreators';
 import Services from 'pages/Services';
-// import Pack from 'pages/Pack';
+import ServicePage from 'pages/ServicePage';
 import Pages from 'pages/Pages';
 import Contacts from 'pages/Contacts';
 
@@ -76,12 +75,11 @@ class App {
       about: new About(),
       intro: new Intro(),
       home: new Home(),
-      // the_media: new TheMedia(),
       // work: new Work(),
       // work_page: new WorkPage(),
       // the_creators: new TheCreators(),
       services: new Services(),
-      // pack: new Pack(),
+      service_page: new ServicePage(),
       pages: new Pages(),
       contacts: new Contacts(),
     };

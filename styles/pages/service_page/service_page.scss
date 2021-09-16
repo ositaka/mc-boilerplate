@@ -1,0 +1,45 @@
+.service_page {
+  @extend %page;
+
+  // background: $color-grey-light;
+  // color: $color-grey-dark;
+}
+
+.service_page__hero {
+  @extend %full-height;
+}
+
+.service_page__header,
+.service_page__details {
+  margin: auto;
+  width: 140rem;
+}
+
+.service_page__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 18rem 0 6rem;
+
+  @include media('<phone') {
+    display: block;
+    width: 88%;
+  }
+}
+
+.service_page__title,
+.service_page__price {
+  @extend %title-120;
+
+  line-height: 1;
+}
+
+.service_page__price {
+  margin-right: 10rem;
+}
+
+.service_page__price {
+  color: $color-secondary;
+}
+
+.service_page__description {
+}

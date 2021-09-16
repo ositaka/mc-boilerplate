@@ -1,0 +1,19 @@
+extends ../base.pug
+
+block variables
+  - var template = 'service_page'
+
+block content
+  .service_page(data-background="#5a5a5a" data-color="#fff")
+    .service_page__wrapper
+
+      section.service_page__hero
+        .service_page__header
+          h2.service_page__title(data-animation="title")!=service_page.data.title.replace(/\n/g, '<br>')
+          .service_page__price=`€${service_page.data.price}`
+          
+        .service_page__header
+          .service_page___description!=PrismicDOM.RichText.asHtml(service_page.data.description)
+
+
+      include ../partials/footer
