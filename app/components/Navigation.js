@@ -1,21 +1,23 @@
-import GSAP from 'gsap'
+// import GSAP from 'gsap'
 
 import Component from 'classes/Component'
 import Detection from 'classes/Detection'
 
 import { mapEach } from 'utils/dom'
 
-import { COLOR_BRIGHT_GRAY, COLOR_QUARTER_SPANISH_WHITE } from 'utils/colors'
+// import { COLOR_BRIGHT_GRAY, COLOR_QUARTER_SPANISH_WHITE } from 'utils/colors'
 
 export default class Navigation extends Component {
   constructor({ template, langEN, langPT, menu, menuLinks, siteurl, seo_title }) {
     super({
       element: '.navigation',
       elements: {
+        content: '.content',
         items: '.navigation__list__item',
         links: '.navigation__list__link',
         menuLinks: '.navigation__list .navigation__list__link',
-        navigation: '.navigation'
+        navigation: '.navigation',
+        langSwitcher: '.langs__switcher .navigation__list__link'
       },
       langs: {
         en: '#en',
@@ -34,11 +36,77 @@ export default class Navigation extends Component {
     if (Detection.isPhone) {
       mapEach(this.elements.links, element => {
         element.addEventListener('click', _ => {
-          console.log("clicked")
           document.getElementById("menu-toggle-button").checked = false
         })
       })
     }
+
+    this.elements.navigation.addEventListener('click', event => {
+      const subnav = event.srcElement.parentNode.parentNode.classList.contains('navigation__list__subnav')
+      const subnavParent = event.srcElement.parentNode.parentNode.parentNode.querySelector('.navigation__list__link')
+      const langSwitcher = this.elements.langSwitcher
+      let langsClick = false
+
+      langSwitcher.forEach((element) => {
+        if (event.target == element) {
+          langsClick = true
+        }
+      })
+
+      if (subnav) {
+        this.elements.menuLinks.forEach((element) => {
+          element.classList.remove('active')
+        })
+
+        subnavParent.classList.add("active")
+      }
+
+      else {
+        if (langsClick !== true && event.target.href) {
+          this.elements.menuLinks.forEach((element) => {
+            element.classList.remove('active')
+          })
+        }
+      }
+
+      if (langsClick !== true && event.target.href) {
+        event.target.classList.add("active")
+      }
+    })
+
+    this.elements.content.addEventListener('click', event => {
+
+      // get url's from navigation
+      this.elements.menuLinks.forEach((element) => {
+
+        const anchor = event.target.closest("a")
+        if (!anchor) return
+
+        // get url from click
+        if (anchor.getAttribute('href') === element.getAttribute('href').replace(/http:\/\/localhost:3030/g, '')) {
+          element.classList.add('active')
+        }
+      })
+    })
+
+    // check current page on window load
+    this.elements.menuLinks.forEach((element) => {
+      if (window.location.href.replace(/http:\/\/localhost:3030/g, '') === element.getAttribute('href')) {
+        element.classList.add('active')
+
+        // in case of subnav item,
+        // activate parent link
+        if (window.location.pathname.includes(element.getAttribute('href'))) {
+
+          const subnav = element.parentNode.parentNode.classList.contains('navigation__list__subnav')
+          const subnavParent = element.parentNode.parentNode.parentNode.querySelector('.navigation__list__link')
+
+          if (subnav) {
+            subnavParent.classList.add("active")
+          }
+        }
+      }
+    })
   }
 
   onChange(template, langEN, langPT, menu, menuLinks, siteurl, seo_title) {
@@ -54,125 +122,6 @@ export default class Navigation extends Component {
         element.href = link.href
       })
     }
-
-    if (template === 'home') {
-      GSAP.to(this.elements.items, {
-        duration: 1.5,
-        textDecoration: 'none'
-      })
-      GSAP.to(this.elements.items[0], {
-        duration: 1.5,
-        textDecoration: 'underline'
-      })
-
-    } else if (template === 'the_media' || template === 'media_page') {
-
-      GSAP.to(this.elements.items, {
-        duration: 1.5,
-        textDecoration: 'none'
-      })
-      GSAP.to(this.elements.items[0], {
-        duration: 1.5,
-        textDecoration: 'underline'
-      })
-
-    } else if (template === 'approach') {
-
-      GSAP.to(this.elements.items, {
-        duration: 1.5,
-        textDecoration: 'none'
-      })
-      GSAP.to(this.elements.items[1], {
-        duration: 1.5,
-        textDecoration: 'underline'
-      })
-
-    } else if (template === 'work') {
-
-      GSAP.to(this.elements.items, {
-        duration: 1.5,
-        textDecoration: 'none'
-      })
-      GSAP.to(this.elements.items[2], {
-        duration: 1.5,
-        textDecoration: 'underline'
-      })
-
-    } else if (template === 'the_creators') {
-
-      GSAP.to(this.elements.items, {
-        duration: 1.5,
-        textDecoration: 'none'
-      })
-      GSAP.to(this.elements.items[3], {
-        duration: 1.5,
-        textDecoration: 'underline'
-      })
-
-    } else if (template === 'contacts') {
-
-      GSAP.to(this.elements.items, {
-        duration: 1.5,
-        textDecoration: 'none'
-      })
-      GSAP.to(this.elements.items[4], {
-        duration: 1.5,
-        textDecoration: 'underline'
-      })
-
-    } else if (template === 'price_packs') {
-
-      GSAP.to(this.elements.items, {
-        duration: 1.5,
-        textDecoration: 'none'
-      })
-      GSAP.to(this.elements.items[5], {
-        duration: 1.5,
-        textDecoration: 'underline'
-      })
-
-    } else {
-
-      GSAP.to(this.elements.items, {
-        duration: 1.5,
-        textDecoration: 'none'
-      })
-
-    }
-
-    // if (template === 'about') {
-    //   GSAP.to(this.element, {
-    //     color: COLOR_BRIGHT_GRAY,
-    //     duration: 1.5
-    //   })
-
-    //   GSAP.to(this.elements.items[0], {
-    //     autoAlpha: 1,
-    //     delay: 0.75,
-    //     duration: 0.75
-    //   })
-
-    //   GSAP.to(this.elements.items[1], {
-    //     autoAlpha: 0,
-    //     duration: 0.75
-    //   })
-    // } else {
-    //   GSAP.to(this.element, {
-    //     color: COLOR_QUARTER_SPANISH_WHITE,
-    //     duration: 1.5
-    //   })
-
-    //   GSAP.to(this.elements.items[0], {
-    //     autoAlpha: 0,
-    //     duration: 0.75
-    //   })
-
-    //   GSAP.to(this.elements.items[1], {
-    //     autoAlpha: 1,
-    //     delay: 0.75,
-    //     duration: 0.75
-    //   })
-    // }
 
   }
 }

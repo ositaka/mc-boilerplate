@@ -9,7 +9,6 @@ import Footer from 'components/Footer';
 import Navigation from 'components/Navigation';
 import Preloader from 'components/Preloader';
 
-import About from 'pages/About';
 import Intro from 'pages/Intro';
 import Home from 'pages/Home';
 // import Work from 'pages/Work';
@@ -72,7 +71,6 @@ class App {
 
   createPages() {
     this.pages = {
-      about: new About(),
       intro: new Intro(),
       home: new Home(),
       // work: new Work(),
@@ -131,7 +129,6 @@ class App {
       const siteurl = div.querySelector('.navigation__link').href;
       const footerDiv = div.querySelector('.footer').innerHTML;
       const seo_title = div.querySelector('title').innerHTML;
-      console.log(menuLinks)
 
       this.template = divContent.getAttribute('data-template');
       this.langEN = langEN;

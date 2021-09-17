@@ -179,7 +179,7 @@ app.get('/:lang/:uid/', async (req, res) => {
 
 
   if (page) {
-    if (page.data.parent_page) {
+    if (page.data.parent_page.uid) {
       res.redirect(`/${page.lang}/${page.data.parent_page.uid}/${page.uid}/`)
     }
 

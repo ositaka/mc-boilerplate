@@ -26,7 +26,7 @@ nav.navigation
 
                 each sub in item.items
                   li.navigation__list__item
-                    a.navigation__list__link(href=`${lang}/${parent}/${sub.sub_nav_link.uid}`)=sub.sub_nav_link_label[0].text
+                    a.navigation__list__link(href=`/${lang}/${parent}/${sub.sub_nav_link.uid}/`)=sub.sub_nav_link_label[0].text
 
       .langs
         .langs__switcher
@@ -34,7 +34,7 @@ nav.navigation
           if ( lang === 'en-gb' )
 
             li.navigation__list__item
-              a.navigation__list__link#en(href="#") 🇬🇧
+              a.navigation__list__link#en(href="") 🇬🇧
 
             each altLang in altLangs
             
@@ -47,7 +47,7 @@ nav.navigation
 
           if ( lang === 'pt-pt' )
             li.navigation__list__item
-              a.navigation__list__link#pt(href="#") 🇵🇹
+              a.navigation__list__link#pt(href="") 🇵🇹
             
             each altLang in altLangs
               if ( altLang.lang === 'en-gb' )

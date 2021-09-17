@@ -78,7 +78,7 @@
 
   display: block;
   font-variation-settings: 'wght' 500;
-  line-height: 1;
+  line-height: 1.15;
 
   @include media('<phone') {
     font-size: 4.4rem;

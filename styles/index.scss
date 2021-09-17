@@ -9,7 +9,6 @@
 @import './utils/responsive';
 
 @import './shared/animations';
-@import './shared/bubbles';
 @import './shared/buttons';
 @import './shared/descriptions';
 @import './shared/grids';
@@ -18,7 +17,6 @@
 @import './shared/pages';
 @import './shared/titles';
 @import './shared/transitions';
-@import './shared/workflow';
 
 @import './base/fonts';
 @import './base/base';
@@ -28,11 +26,6 @@
 
 @import './layout/navigation';
 @import './layout/footer';
-
-@import './pages/about/about';
-@import './pages/about/content';
-@import './pages/about/gallery';
-@import './pages/about/highlight';
 
 @import './pages/intro/intro';
 

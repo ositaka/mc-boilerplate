@@ -1,10 +1,6 @@
-import GSAP from 'gsap'
 import { Camera, Renderer, Transform } from 'ogl'
 
-import About from './About'
 import Intro from './Intro'
-
-import Transition from './Transition'
 
 export default class Canvas {
   constructor({ template }) {
@@ -36,8 +32,6 @@ export default class Canvas {
     })
 
     this.gl = this.renderer.gl
-
-    document.body.appendChild(this.gl.canvas)
   }
 
   createCamera() {
