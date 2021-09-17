@@ -24,7 +24,7 @@ html {
 
 body {
   @extend %cover;
-  @extend %description-16;
+  @extend %text-16;
 
   font-family: $font-montserrat;
   position: fixed;

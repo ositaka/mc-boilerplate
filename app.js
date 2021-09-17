@@ -4,7 +4,7 @@ const logger = require('morgan');
 const express = require('express');
 const methodOverride = require('method-override');
 
-const port = 3030;
+const port = 3000;
 const app = express();
 const path = require('path');
 
