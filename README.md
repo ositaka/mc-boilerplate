@@ -27,5 +27,7 @@ Developed by: Nuno Marques (OSITAKA)
 
 # What to update on a new project
 
-- Favicons and all files on `/shared` folder
+- Create a new repo on [Prismic](https://prismic.io)
+- Create a `.env` file with Access Tokens
+- Update `favicons` and all files on `/shared` folder
 - update email settings from `npodemailer` on `./app.js`
