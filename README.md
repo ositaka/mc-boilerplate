@@ -22,3 +22,10 @@ Developed by: Nuno Marques (OSITAKA)
 
 - English (`en-gb`)
 - Portuguese (`pt-pt`)
+
+---
+
+# What to update on a new project
+
+- Favicons and all files on `/shared` folder
+- update email settings from `npodemailer` on `./app.js`
