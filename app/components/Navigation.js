@@ -47,14 +47,14 @@ export default class Navigation extends Component {
       const langSwitcher = this.elements.langSwitcher
       let langsClick = false
 
-      langSwitcher.forEach((element) => {
+      mapEach(langSwitcher, element => {
         if (event.target == element) {
           langsClick = true
         }
       })
 
       if (subnav) {
-        this.elements.menuLinks.forEach((element) => {
+        mapEach(this.elements.menuLinks, element => {
           element.classList.remove('active')
         })
 
@@ -63,7 +63,7 @@ export default class Navigation extends Component {
 
       else {
         if (langsClick !== true && event.target.href) {
-          this.elements.menuLinks.forEach((element) => {
+          mapEach(this.elements.menuLinks, element => {
             element.classList.remove('active')
           })
         }
@@ -77,7 +77,7 @@ export default class Navigation extends Component {
     this.elements.content.addEventListener('click', event => {
 
       // get url's from navigation
-      this.elements.menuLinks.forEach((element) => {
+      mapEach(this.elements.menuLinks, element => {
 
         const anchor = event.target.closest("a")
         if (!anchor) return
@@ -90,7 +90,7 @@ export default class Navigation extends Component {
     })
 
     // check current page on window load
-    this.elements.menuLinks.forEach((element) => {
+    mapEach(this.elements.menuLinks, element => {
       if (window.location.href.replace(/http:\/\/localhost:3030/g, '') === element.getAttribute('href')) {
         element.classList.add('active')
 
@@ -116,7 +116,7 @@ export default class Navigation extends Component {
       this.langs.pt.setAttribute('href', langPT);
       this.langs.siteurl.setAttribute('href', siteurl);
 
-      this.elements.menuLinks.forEach((element, index) => {
+      mapEach(this.elements.menuLinks, (element, index) => {
         const link = menuLinks[index]
         element.text = link.text
         element.href = link.href
