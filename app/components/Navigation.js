@@ -107,6 +107,15 @@ export default class Navigation extends Component {
         }
       }
     })
+
+    // set document lang attribue if click on lang
+    this.langs.en.addEventListener('click', event => {
+      document.documentElement.lang = 'en-gb'
+    })
+
+    this.langs.pt.addEventListener('click', event => {
+      document.documentElement.lang = 'pt-pt'
+    })
   }
 
   onChange(template, langEN, langPT, menu, menuLinks, siteurl, seo_title) {
